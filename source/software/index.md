@@ -1,14 +1,10 @@
 ---
-title: Welcome to NCSG group
+title: NCSG group provides programs for satellite gravity computation.
 ---
 
-The NCSG Group focuses on numerical computation, satellite gravity, geodesy, and Earth system mass transport. We develop computational methods and satellite gravity techniques to investigate mass redistribution in the Earth system.
-
-[Software](/software/) | [Developers](/developers/) | [Publications](/publications/)
+# Software
 
 ---
-
-## Software
 
 <div class="ncsg-project-grid">
 
@@ -61,8 +57,3 @@ The NCSG Group focuses on numerical computation, satellite gravity, geodesy, and
   </a>
 
 </div>
-
----
-## Contact us
-
-Please leave your question, suggestion and comment on any of our published toolbox in [<u>our discussion forum<u>](https://github.com/orgs/NCSGgroup/discussions), so that we can answer or reach out to you as soon as possible.

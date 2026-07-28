@@ -20,6 +20,4 @@ General contact: [ncsg@example.com](mailto:ncsg@example.com)
 
 ## Join Us
 
-We welcome motivated students and collaborators with backgrounds in geodesy, geophysics, applied mathematics, remote sensing, computer science, or related fields.
-
-Please contact us with your CV and a brief statement of research interests.
+Please leave your question, suggestion and comment on any of our published toolbox in [<u>our discussion forum<u>](https://github.com/orgs/NCSGgroup/discussions), so that we can answer or reach out to you as soon as possible.

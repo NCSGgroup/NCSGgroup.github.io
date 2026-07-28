@@ -18,11 +18,11 @@
 
 # 用于浏览器标签的图标
 # Icon for browser tab
-favicon: /img/fluid.png
+favicon: /img/website/avatar.png
 
 # 用于苹果设备的图标
 # Icon for Apple touch
-apple_touch_icon: /img/fluid.png
+apple_touch_icon: /img/website/avatar.png
 
 # 浏览器标签页中的标题分隔符，效果：文章名 - 站点名
 # Title separator in browser tab, eg: article - site
@@ -87,7 +87,7 @@ fun_features:
 
     # 打印速度，数字越大越慢
     # Typing speed, the larger the number, the slower
-    typeSpeed: 40
+    typeSpeed: 30
 
     # 游标字符
     # Cursor character
@@ -239,6 +239,7 @@ custom_js:
 # The usage is the same as custom_js
 custom_css:
   - /css/ncsg-projects.css
+  - https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css
 
 # 网页访问统计
 # Analysis of website visitors
@@ -382,19 +383,24 @@ navbar:
   # 导航栏菜单，可自行增减，key 用来关联 languages/*.yml，如不存在关联则显示 key 本身的值；icon 是 css class，可以省略；增加 name 可以强制显示指定名称
   # Navigation bar menu. `key` is used to associate languages/*.yml. If there is no association, the value of `key` itself will be displayed; if `icon` is a css class, it can be omitted; adding `name` can force the display of the specified name
   menu:
-    - { name: Home, link: / }
-    - { name: Research, link: /research/ }
-    - { name: People, link: /people/ }
-    - { name: Publications, link: /publications/ }
-    - { name: Projects, link: /projects/ }
-    - { name: Results, link: /results/ }
-    - { name: Contact, link: /contact/ }
-#    - { name: 中文, link: /zh/ }
+    - {name: Home, link: /, icon: "fas fa-home"}
+    - {name: Software, link: /software/, icon: "fas fa-code"}
+#    - {name: Research, link: /research/ }
+#    - {name: PyHawk, link: /pyhawk/, icon: "fas fa-code"}
+#    - {name: SaGEA, link: /sagea/, icon: "fas fa-code"}
+#    - {name: SaGEA-fluid, link: /sagea-fluid/, icon: "fas fa-code"}
+#    - {name: PyGLDA, link: /pyglda/, icon: "fas fa-code"}
+    - {name: Developers, link: /developers/, icon: "fas fa-users"}
+    - {name: Publications, link: /publications/, icon: "fas fa-book"}
+#    - {name: Projects, link: /software/ }
+#    - {name: Results, link: /results/ }
+#    - {name: Contact, link: /contact/ }
+#    - {name: 中文, link: /zh/ }
 
 # 搜索功能，基于 hexo-generator-search 插件，若已安装其他搜索插件请关闭此功能，以避免生成多余的索引文件
 # Search feature, based on hexo-generator-search. If you have installed other search plugins, please disable this feature to avoid generating redundant index files
 search:
-  enable: true
+  enable: false
 
   # 搜索索引文件的路径，可以是相对路径或外站的绝对路径
   # Path for search index file, it can be a relative path or an absolute path
@@ -465,7 +471,7 @@ open_graph:
 #---------------------------
 footer:
   # 页脚第一行文字的 HTML，建议保留 Fluid 的链接，用于向更多人推广本主题
-  # HTML of the first line of the footer, it is recommended to keep the Fluid link to promote this theme to more people
+  # HTML of the first line of the footer, it is recommended to keep the Fluid link to promote this theme to more developers
   content: '
     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a>
     <i class="iconfont icon-love"></i>
@@ -1028,7 +1034,7 @@ about:
   banner_img:
   banner_img_height: 60
   banner_mask_alpha: 0.3
-  avatar: /img/avatar.png
+  avatar:
   name: "Fluid"
   intro: "An elegant theme for Hexo"
   # 更多图标可从 https://hexo.fluid-dev.com/docs/icon/ 查找，`class` 代表图标的 css class，添加 `qrcode` 后，图标不再是链接而是悬浮二维码
@@ -1051,8 +1057,21 @@ page:
   banner_img:
   banner_img_height: 60
   banner_mask_alpha: 0.3
-  avatar: /img/avatar.png
+  avatar:
 
+#---------------------------
+# 自定义页
+# Custom Page
+#
+# 通过 hexo new page 命令创建的页面
+# Custom Page through `hexo new page`
+#---------------------------
+sagea:
+  enable: true
+  banner_img: /sagea/img/background.png
+  banner_img_height: 60
+  banner_mask_alpha: 0.3
+  avatar:
 
 #---------------------------
 # 404页
