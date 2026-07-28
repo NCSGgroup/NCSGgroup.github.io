@@ -20,8 +20,7 @@ date: 2026-07-19
     </div>
     <div class="ncsg-project-card-body">
       <p>
-        Research on GRACE/GRACE-FO satellite gravimetry, gravity field recovery,
-        mass transport inversion, and uncertainty assessment.
+        An efficient gravity recovery solver for low-low satellite-to-satellite tracking gravity missions.
       </p>
     </div>
   </a>
@@ -33,8 +32,7 @@ date: 2026-07-19
     </div>
     <div class="ncsg-project-card-body">
       <p>
-        Processing pipelines for monthly gravity fields, spherical harmonic coefficients,
-        leakage correction, filtering, and regional water storage estimation.
+        SaGEA is a Python toolbox for comprehensive post-processing and error assessment of GRACE and GRACE-FO based mass change.
       </p>
     </div>
   </a>
@@ -42,12 +40,11 @@ date: 2026-07-19
   <a class="ncsg-project-card" href="https://github.com/NCSGgroup/SaGEA-fluid">
     <div class="ncsg-project-card-header">
       <h3>SaGEA-Fluid</h3>
-      <img src="/images/projects/numerical-method.png" alt="Numerical computation project">
+      <img src="../img/projects/logo_sagea_fluid.png" alt="Numerical computation project">
     </div>
     <div class="ncsg-project-card-body">
       <p>
-        Efficient numerical algorithms for inverse problems, large-scale geophysical
-        modelling, uncertainty propagation, and scientific computing.
+        SAGEA-fluid extends SaGEA to include self-attraction and loading effects, geocenter motion, and Earth rotation effects (i.e., polar motion and length-of-day). It targets geophysical phenomena induced by surface fluids.
       </p>
     </div>
   </a>
@@ -55,12 +52,11 @@ date: 2026-07-19
   <a class="ncsg-project-card" href="https://github.com/NCSGgroup/PyGLDA">
     <div class="ncsg-project-card-header">
       <h3>PyGLDA</h3>
-      <img src="/images/projects/visualization.png" alt="Interactive visualization project">
+      <img src="../img/projects/x.png" alt="Interactive visualization project">
     </div>
     <div class="ncsg-project-card-body">
       <p>
-        Web-based visualization of satellite gravity data, global grids, time series,
-        maps, and geospatial analysis products.
+        Here gives some descrition.
       </p>
     </div>
   </a>
@@ -68,12 +64,11 @@ date: 2026-07-19
   <a class="ncsg-project-card" href="https://github.com/NCSGgroup">
     <div class="ncsg-project-card-header">
       <h3>More</h3>
-      <img src="/images/projects/visualization.png" alt="Interactive visualization project">
+      <img src="../img/projects/x.png" alt="Interactive visualization project">
     </div>
     <div class="ncsg-project-card-body">
       <p>
-        Web-based visualization of satellite gravity data, global grids, time series,
-        maps, and geospatial analysis products.
+        Here gives some descrition.
       </p>
     </div>
   </a>

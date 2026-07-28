@@ -1,5 +1,5 @@
 ---
-title: SaGEA":" Python toolbox for satellite gravity post-processing and error assessment 
+title: "SaGEA: Python toolbox for satellite gravity post-processing and error assessment" 
 ---
 
 # 1. Introduction

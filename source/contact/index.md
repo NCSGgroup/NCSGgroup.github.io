@@ -8,20 +8,15 @@ title: Contact with us
 
 Numerical Computation and Satellite Gravity
 
-Department / School / University  
-Address line 1  
-City, Country
+Department / School / University
 
 ## Email
 
-General contact: [ncsg@example.edu](mailto:ncsg@example.edu)
+General contact: [ncsg@example.com](mailto:ncsg@example.com)
 
 ## Links
 
-- [GitHub](https://github.com/)
-- [Zenodo](https://zenodo.org/)
-- [Google Scholar](https://scholar.google.com/)
-- [University](https://example.edu)
+- [GitHub](https://github.com/NCSRgroup)
 
 ## Join Us
 

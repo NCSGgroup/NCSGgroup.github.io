@@ -2,38 +2,68 @@
 title: People
 ---
 
-# People
-
-## Principal Investigator
-
 <div style="display: flex; gap: 20px; align-items: center; margin-bottom: 30px;">
-  <img src="/images/people/zhangsan.jpg" width="140" style="border-radius: 8px;">
+  <img src="/img/people/FanYang.png" width="140" style="border-radius: 8px;">
   <div>
-    <h3>San Zhang 张三</h3>
-    <p><strong>Principal Investigator</strong></p>
-    <p>Research interests: satellite gravity, inverse problems, numerical computation.</p>
+    <h3>Dr. Fan Yang</h3>
+    <p><strong>Postdoctoral researcher</strong></p>
+    <p>Research interests: satellite gravity, inverse problems, data assimilation, terrestrial water storage.</p>
     <p>
-      <a href="mailto:zhangsan@example.edu">Email</a> |
-      <a href="https://scholar.google.com/">Google Scholar</a> |
-      <a href="https://github.com/">GitHub</a>
+      <a href="mailto:fany@plan.aau.dk">Email | fany@plan.aau.dk</a>
     </p>
   </div>
 </div>
 
-## PhD Students
 
 <div style="display: flex; gap: 20px; align-items: center; margin-bottom: 30px;">
-  <img src="/images/people/lisi.jpg" width="140" style="border-radius: 8px;">
+  <img src="/img/people/ShuhaoLiu.png" width="140" style="border-radius: 8px;">
   <div>
-    <h3>Si Li 李四</h3>
-    <p><strong>PhD Student</strong></p>
-    <p>Research interests: GRACE data processing, terrestrial water storage.</p>
+    <h3>Dr. Shuhao Liu</h3>
+    <p><strong>Postdoctoral researcher</strong></p>
+    <p>Research interests: gravity data processing, data assimilation</p>
     <p>
-      <a href="mailto:lisi@example.edu">Email</a>
+      <a href="mailto:liushuhao@apm.ac.cn">Email | liushuhao@apm.ac.cn</a>
+    </p>
+    <p>
+      <a href="https://shuhaoliu.com">Personal Homepage | shuhaoliu.com</a>
     </p>
   </div>
 </div>
 
-## Alumni
+<div style="display: flex; gap: 20px; align-items: center; margin-bottom: 30px;">
+  <img src="/img/people/YiWu.png" width="140" style="border-radius: 8px;">
+  <div>
+    <h3>Yi Wu</h3>
+    <p><strong>PhD candidate</strong></p>
+    <p>Research interests: satellite gravity, inverse problems.</p>
+    <p>
+      <a href="mailto:wu_yi@hust.edu.cn">Email | wu_yi@hust.edu.cn</a>
+    </p>
+  </div>
+</div>
 
-Coming soon.
+<div style="display: flex; gap: 20px; align-items: center; margin-bottom: 30px;">
+  <img src="/img/people/WeihangZhang.jpg" width="140" style="border-radius: 8px;">
+  <div>
+    <h3>Weihang Zhang</h3>
+    <p><strong>PhD candidate</strong></p>
+    <p>Research interests: item 1, item 2.</p>
+    <p>
+      <a href="link">Email</a>
+    </p>
+  </div>
+</div>
+
+<div style="display: flex; gap: 20px; align-items: center; margin-bottom: 30px;">
+  <img src="/img/people/XudongPan.jpg" width="140" style="border-radius: 8px;">
+  <div>
+    <h3>Xudong Pan</h3>
+    <p><strong>PhD candidate</p>
+    <p>Research interests: item 1, item 2.</p>
+    <p>
+      <a href="link">Email</a>
+    </p>
+  </div>
+</div>
+
+

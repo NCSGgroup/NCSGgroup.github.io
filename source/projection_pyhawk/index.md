@@ -1,5 +1,5 @@
 ---
-title: PyHawk":" Gravity recovery for low-low tracking satellite gravity missions
+title: "PyHawk: Gravity recovery for low-low tracking satellite gravity missions"
 ---
 
 # 1. Introduction

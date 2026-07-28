@@ -20,21 +20,14 @@ We study time-variable gravity fields using GRACE, GRACE-FO, and related satelli
 
 ### Numerical Computation
 
-We develop numerical methods for large-scale inverse problems, regularization, and geodetic data processing.
+We develop numerical methods for geodetic data processing.
 
 ### Earth System Applications
 
-We apply satellite gravity observations to study terrestrial water storage, ice mass change, sea level, and other Earth system processes.
-
----
-
-## Latest News
-
-- 2025-01-01: Welcome to the NCSG Group website.
-- 2025-03-01: New paper published in XXX.
+We apply satellite gravity observations to study terrestrial water storage, sea level, and other Earth system processes.
 
 ---
 
 ## Links
 
-- [GitHub](https://github.com/NCSGgroup)
+- [GitHub | https://github.com/NCSGgroup](https://github.com/NCSGgroup)
