@@ -3,18 +3,26 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
-subtitle: ''
-description: ''
+title: NCSG Group
+subtitle: Welcome to NCSG Group
+description: Research group on numerical computation, satellite gravity, geodesy, and Earth system mass transport.
 keywords:
-author: John Doe
+  - satellite gravity
+  - numerical computation
+  - GRACE
+  - GRACE-FO
+  - geodesy
+  - Earth system
+author: NCSG Group
 language: en
 timezone: ''
 
+root: /
+
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: http://example.com
-permalink: :year/:month/:day/:title/
+url: https://ncsggroup.github.io
+permalink: news/:year/:month/:day/:title/
 permalink_defaults:
 pretty_urls:
   trailing_index: true # Set to false to remove trailing 'index.html' from permalinks
@@ -96,9 +104,17 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: landscape
+theme: fluid
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: ''
+
+mathjax:
+  tags: ams
+  single_dollars: true
+  cjk_width: 0.9
+  normal_width: 0.6
+  append_css: true
+  every_page: false

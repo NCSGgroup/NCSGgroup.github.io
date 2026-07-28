@@ -1,8 +1,11 @@
-.DS_Store
-Thumbs.db
-db.json
-*.log
 node_modules/
 public/
-.deploy*/
-_multiconfig.yml
+.deploy_git/
+db.json
+.DS_Store
+Thumbs.db
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.env
+
