@@ -16,6 +16,17 @@
 # Global
 #---------------------------
 
+# 资源预加载
+inject:
+  head:
+    - <link rel="preload" as="image" href="/img/website/background_hompage.png">
+    - <link rel="preload" as="image" href="/img/website/background_wide.png">
+    - <link rel="preload" as="image" href="/img/people/FanYang.png">
+    - <link rel="preload" as="image" href="/img/people/ShuhaoLiu.png">
+    - <link rel="preload" as="image" href="/img/people/WeihangZhang.png">
+    - <link rel="preload" as="image" href="/img/people/XudongPan.png">
+    - <link rel="preload" as="image" href="/img/people/YiWu.png">
+
 # 用于浏览器标签的图标
 # Icon for browser tab
 favicon: /img/website/avatar.png

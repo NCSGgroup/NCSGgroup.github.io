@@ -7,7 +7,7 @@ banner_img: /sagea/img/background.svg
 
 **Latest version:** 0.2.9
 
-**Useful Link:** [<u>Source Repository<u>](https://github.com/NCSGgroup/SaGEA)
+**Useful Link:** [<u>Source repository</u>](https://github.com/NCSGgroup/SaGEA) | [<u>Contact us</u>](https://github.com/orgs/NCSGgroup/discussions)
 
 <div class="ncsg-project-grid">
 
@@ -43,18 +43,6 @@ banner_img: /sagea/img/background.svg
     <div class="ncsg-project-card-body">
       <p>
         Product examples produced via sagea.
-      </p>
-    </div>
-  </a>
-
-  <a class="ncsg-project-card" href="https://github.com/orgs/NCSGgroup/discussions">
-    <div class="ncsg-project-card-header">
-      <h3>Contact us</h3>
-      <img src="../sagea/img/Discussion.svg" alt="Numerical computation project">
-    </div>
-    <div class="ncsg-project-card-body">
-      <p>
-        Discuss with us on our GitHub page.
       </p>
     </div>
   </a>
