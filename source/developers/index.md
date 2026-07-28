@@ -49,7 +49,7 @@ title: Developers
     <p><strong>PhD candidate</strong></p>
     <p>Research interests: ocean topography; sea level change.</p>
     <p>
-      <a href="mailto:zhang.17371@osu.edu">Email</a>
+      <a href="mailto:zhang.17371@osu.edu">Email | zhang.17371@osu.edu</a>
     </p>
   </div>
 </div>
@@ -61,7 +61,7 @@ title: Developers
     <p><strong>PhD candidate</p>
     <p>Research interests: satellite attitude determination，terrestrial water storage，hydrology，deep learning.</p>
     <p>
-      <a href="mailto:pxudong102@hust.edu.cn">Email</a>
+      <a href="mailto:pxudong102@hust.edu.cn">Email | pxudong102@hust.edu.cn</a>
     </p>
   </div>
 </div>
