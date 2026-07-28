@@ -15,7 +15,7 @@ The NCSG Group focuses on numerical computation, satellite gravity, geodesy, and
   <a class="ncsg-project-card" href="/pyhawk/">
     <div class="ncsg-project-card-header">
       <h3>PyHawk</h3>
-      <img src="../img/projects/logo_pyhawk.png" alt="Satellite gravity project">
+      <img src="../img/projects/logo_pyhawk.webp" alt="Satellite gravity project">
     </div>
     <div class="ncsg-project-card-body">
       <p>
@@ -27,7 +27,7 @@ The NCSG Group focuses on numerical computation, satellite gravity, geodesy, and
   <a class="ncsg-project-card" href="/sagea/">
     <div class="ncsg-project-card-header">
       <h3>SaGEA</h3>
-      <img src="../img/projects/logo_sagea.png" alt="GRACE data processing project">
+      <img src="../img/projects/logo_sagea.webp" alt="GRACE data processing project">
     </div>
     <div class="ncsg-project-card-body">
       <p>
@@ -39,7 +39,7 @@ The NCSG Group focuses on numerical computation, satellite gravity, geodesy, and
   <a class="ncsg-project-card" href="https://github.com/NCSGgroup/SaGEA-fluid">
     <div class="ncsg-project-card-header">
       <h3>SaGEA-Fluid</h3>
-      <img src="../img/projects/logo_sagea_fluid.png" alt="Numerical computation project">
+      <img src="../img/projects/logo_sagea_fluid.webp" alt="Numerical computation project">
     </div>
     <div class="ncsg-project-card-body">
       <p>
@@ -51,7 +51,7 @@ The NCSG Group focuses on numerical computation, satellite gravity, geodesy, and
   <a class="ncsg-project-card" href="https://github.com/NCSGgroup/PyGLDA">
     <div class="ncsg-project-card-header">
       <h3>PyGLDA</h3>
-      <img src="../img/projects/logo_pyglda.png" alt="Interactive visualization project">
+      <img src="../img/projects/logo_pyglda.webp" alt="Interactive visualization project">
     </div>
     <div class="ncsg-project-card-body">
       <p>

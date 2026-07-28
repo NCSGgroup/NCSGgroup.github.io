@@ -3,7 +3,7 @@ title: Developers
 ---
 
 <div style="display: flex; gap: 20px; align-items: center; margin-bottom: 30px;">
-  <img src="/img/people/FanYang.png" width="140" style="border-radius: 8px;">
+  <img src="/img/people/FanYang.webp" width="140" style="border-radius: 8px;">
   <div>
     <h3>Dr. Fan Yang</h3>
     <p><strong>Postdoctoral researcher</strong></p>
@@ -16,7 +16,7 @@ title: Developers
 
 
 <div style="display: flex; gap: 20px; align-items: center; margin-bottom: 30px;">
-  <img src="/img/people/ShuhaoLiu.png" width="140" style="border-radius: 8px;">
+  <img src="/img/people/ShuhaoLiu.webp" width="140" style="border-radius: 8px;">
   <div>
     <h3>Dr. Shuhao Liu</h3>
     <p><strong>Postdoctoral researcher</strong></p>
@@ -31,7 +31,7 @@ title: Developers
 </div>
 
 <div style="display: flex; gap: 20px; align-items: center; margin-bottom: 30px;">
-  <img src="/img/people/YiWu.png" width="140" style="border-radius: 8px;">
+  <img src="/img/people/YiWu.webp" width="140" style="border-radius: 8px;">
   <div>
     <h3>Yi Wu</h3>
     <p><strong>PhD candidate</strong></p>
@@ -43,7 +43,7 @@ title: Developers
 </div>
 
 <div style="display: flex; gap: 20px; align-items: center; margin-bottom: 30px;">
-  <img src="/img/people/WeihangZhang.png" width="140" style="border-radius: 8px;">
+  <img src="/img/people/WeihangZhang.webp" width="140" style="border-radius: 8px;">
   <div>
     <h3>Weihang Zhang</h3>
     <p><strong>PhD candidate</strong></p>
@@ -55,7 +55,7 @@ title: Developers
 </div>
 
 <div style="display: flex; gap: 20px; align-items: center; margin-bottom: 30px;">
-  <img src="/img/people/XudongPan.jpg" width="140" style="border-radius: 8px;">
+  <img src="/img/people/XudongPan.webp" width="140" style="border-radius: 8px;">
   <div>
     <h3>Xudong Pan</h3>
     <p><strong>PhD candidate</p>

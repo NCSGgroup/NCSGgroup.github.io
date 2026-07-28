@@ -19,13 +19,13 @@
 # 资源预加载
 inject:
   head:
-    - <link rel="preload" as="image" href="/img/website/background_hompage.png">
-    - <link rel="preload" as="image" href="/img/website/background_wide.png">
-    - <link rel="preload" as="image" href="/img/people/FanYang.png">
-    - <link rel="preload" as="image" href="/img/people/ShuhaoLiu.png">
-    - <link rel="preload" as="image" href="/img/people/WeihangZhang.png">
-    - <link rel="preload" as="image" href="/img/people/XudongPan.png">
-    - <link rel="preload" as="image" href="/img/people/YiWu.png">
+    - <link rel="preload" as="image" href="/img/website/background_hompage.webp">
+    - <link rel="preload" as="image" href="/img/website/background_wide.webp">
+    - <link rel="preload" as="image" href="/img/people/FanYang.webp">
+    - <link rel="preload" as="image" href="/img/people/ShuhaoLiu.webp">
+    - <link rel="preload" as="image" href="/img/people/WeihangZhang.webp">
+    - <link rel="preload" as="image" href="/img/people/XudongPan.webp">
+    - <link rel="preload" as="image" href="/img/people/YiWu.webp">
 
 # 用于浏览器标签的图标
 # Icon for browser tab
@@ -346,7 +346,7 @@ canonical:
 # 对页面中的图片和评论插件进行懒加载处理，可见范围外的元素不会提前加载
 # Lazy loading of images and comment plugin on the page
 lazyload:
-  enable: true
+  enable: false
 
   # 加载时的占位图片
   # The placeholder image when loading
@@ -520,7 +520,7 @@ footer:
 index:
   # 首页 Banner 头图，可以是相对路径或绝对路径，以下相同
   # Path of Banner image, can be a relative path or an absolute path, the same on other pages
-  banner_img: /img/website/background_homepage.png
+  banner_img: /img/website/background_homepage.webp
 
   # 头图高度，屏幕百分比
   # Height ratio of banner image
@@ -592,7 +592,7 @@ index:
 # Post Page
 #---------------------------
 post:
-  banner_img: /img/website/background_wide.png
+  banner_img: /img/website/background_wide.webp
   banner_img_height: 70
   banner_mask_alpha: 0.3
 
