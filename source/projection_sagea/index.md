@@ -1,5 +1,5 @@
 ---
-title: SaGEA
+title: SaGEA":" Python toolbox for satellite gravity post-processing and error assessment 
 ---
 
 # 1. Introduction
@@ -15,4 +15,4 @@ def example():
 
 # 2. Link
 
-source codes at [GitHub Page](https://github.com/ncsggroup/SaGEA)
+source codes at [<u>GitHub Page<u>](https://github.com/ncsggroup/SaGEA)

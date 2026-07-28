@@ -13,10 +13,10 @@ date: 2026-07-19
 
 <div class="ncsg-project-grid">
 
-  <a class="ncsg-project-card" href="https://github.com/NCSGgroup/PyHawk">
+  <a class="ncsg-project-card" href="/projection_pyhawk/">
     <div class="ncsg-project-card-header">
       <h3>PyHawk</h3>
-      <img src="images/logo_pyhawk.png" alt="Satellite gravity project">
+      <img src="../img/projects/logo_pyhawk.png" alt="Satellite gravity project">
     </div>
     <div class="ncsg-project-card-body">
       <p>
@@ -29,7 +29,7 @@ date: 2026-07-19
   <a class="ncsg-project-card" href="/projection_sagea/">
     <div class="ncsg-project-card-header">
       <h3>SaGEA</h3>
-      <img src="images/logo_sagea.png" alt="GRACE data processing project">
+      <img src="../img/projects/logo_sagea.png" alt="GRACE data processing project">
     </div>
     <div class="ncsg-project-card-body">
       <p>
