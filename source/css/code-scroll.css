@@ -1,0 +1,40 @@
+figure.highlight {
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+figure.highlight table {
+  width: max-content;
+  min-width: 100%;
+  table-layout: auto;
+  border-spacing: 0;
+}
+
+figure.highlight td.gutter {
+  position: sticky;
+  left: 0;
+  z-index: 2;
+
+  width: 3.5em;
+  min-width: 3.5em;
+  max-width: 3.5em;
+
+  padding-right: 1em;
+  text-align: right;
+  user-select: none;
+
+  background: #282c34;
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+figure.highlight td.code {
+  padding-left: 0.8em;
+}
+
+figure.highlight pre,
+figure.highlight td.gutter pre,
+figure.highlight td.code pre {
+  margin: 0;
+  white-space: pre;
+  overflow: visible !important;
+}

@@ -58,7 +58,7 @@ title: Developers
   <img src="/img/people/XudongPan.webp" width="140" style="border-radius: 8px;">
   <div>
     <h3>Xudong Pan</h3>
-    <p><strong>PhD candidate</p>
+    <p><strong>PhD candidate</strong></p>
     <p>Research interests: satellite attitude determination，terrestrial water storage，hydrology，deep learning.</p>
     <p>
       <a href="mailto:pxudong102@hust.edu.cn">Email | pxudong102@hust.edu.cn</a>

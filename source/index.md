@@ -1,10 +1,10 @@
 ---
-title: Welcome to NCSG group
+title: Welcome to NCSG group for numerical computation and satellite gravity! We here provide useful software for satellite gravity computation.
 ---
 
 The NCSG Group focuses on numerical computation, satellite gravity, geodesy, and Earth system mass transport. We develop computational methods and satellite gravity techniques to investigate mass redistribution in the Earth system.
 
-[Software](/software/) | [Developers](/developers/) | [Publications](/publications/)
+[🌟<u>Software</u>](/software/) | [👥<u>Developers</u>](/developers/) | [📖<u>Publications</u>](/publications/)
 
 ---
 
@@ -12,7 +12,7 @@ The NCSG Group focuses on numerical computation, satellite gravity, geodesy, and
 
 <div class="ncsg-project-grid">
 
-  <a class="ncsg-project-card" href="/pyhawk/">
+  <a class="ncsg-project-card" href="/software/pyhawk/">
     <div class="ncsg-project-card-header">
       <h3>PyHawk</h3>
       <img src="../img/projects/logo_pyhawk.webp" alt="Satellite gravity project">
@@ -24,7 +24,7 @@ The NCSG Group focuses on numerical computation, satellite gravity, geodesy, and
     </div>
   </a>
 
-  <a class="ncsg-project-card" href="/sagea/">
+  <a class="ncsg-project-card" href="/software/sagea/">
     <div class="ncsg-project-card-header">
       <h3>SaGEA</h3>
       <img src="../img/projects/logo_sagea.webp" alt="GRACE data processing project">
@@ -65,4 +65,4 @@ The NCSG Group focuses on numerical computation, satellite gravity, geodesy, and
 ---
 ## Contact us
 
-Please leave your question, suggestion and comment on any of our published toolbox in [<u>our discussion forum<u>](https://github.com/orgs/NCSGgroup/discussions), so that we can answer or reach out to you as soon as possible.
+Please leave your question, suggestion and comment on any of our published toolbox in [<u>our discussion forum</u>](https://github.com/orgs/NCSGgroup/discussions), so that we can answer or reach out to you as soon as possible.

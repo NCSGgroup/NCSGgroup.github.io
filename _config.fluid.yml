@@ -19,8 +19,7 @@
 # 资源预加载
 inject:
   head:
-    - <link rel="preload" as="image" href="/img/website/background_hompage.webp">
-    - <link rel="preload" as="image" href="/img/website/background_wide.webp">
+    - <link rel="preload" as="image" href="/img/website/background.webp">
     - <link rel="preload" as="image" href="/img/people/FanYang.webp">
     - <link rel="preload" as="image" href="/img/people/ShuhaoLiu.webp">
     - <link rel="preload" as="image" href="/img/people/WeihangZhang.webp">
@@ -245,12 +244,29 @@ font:
 # 指定自定义 .js 文件路径，支持列表；路径是相对 source 目录，如 /js/custom.js 对应存放目录 source/js/custom.js
 # Specify the path of your custom js file, support list. The path is relative to the source directory, such as `/js/custom.js` corresponding to the directory `source/js/custom.js`
 custom_js:
+  custom_head: '
+  <script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [["\\(","\\)"], ["$","$"]],
+      displayMath: [["\\[","\\]"], ["$$","$$"]],
+      processEscapes: true
+    },
+    svg: {
+      fontCache: "global"
+    }
+  };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+  '
 
 # 指定自定义 .css 文件路径，用法和 custom_js 相同
 # The usage is the same as custom_js
 custom_css:
   - /css/ncsg-projects.css
+  - /css/code-scroll.css
   - https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css
+  - https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css
 
 # 网页访问统计
 # Analysis of website visitors
@@ -520,7 +536,7 @@ footer:
 index:
   # 首页 Banner 头图，可以是相对路径或绝对路径，以下相同
   # Path of Banner image, can be a relative path or an absolute path, the same on other pages
-  banner_img: /img/website/background_homepage.webp
+  banner_img: /img/website/background.webp
 
   # 头图高度，屏幕百分比
   # Height ratio of banner image
@@ -592,7 +608,7 @@ index:
 # Post Page
 #---------------------------
 post:
-  banner_img: /img/website/background_wide.webp
+  banner_img: /img/website/background.webp
   banner_img_height: 70
   banner_mask_alpha: 0.3
 
@@ -766,7 +782,7 @@ post:
 
     # 开启后，只有在文章 Front-matter 里指定 `math: true` 才会在文章页启动公式转换，以便在页面不包含公式时提高加载速度
     # If true, only set `math: true` in Front-matter will enable math, to load faster when the page does not contain math
-    specific: false
+    specific: true
 
     # Options: mathjax | katex
     engine: mathjax
@@ -1209,3 +1225,11 @@ static_prefix:
   hint: https://lib.baomitu.com/hint.css/2.7.0/
 
   moment: https://lib.baomitu.com/moment.js/2.29.4/
+
+markdown:
+  render:
+    html: true
+    xhtmlOut: false
+    breaks: false
+    linkify: true
+    typographer: true
