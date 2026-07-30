@@ -11,8 +11,8 @@ title: Developers
   <img src="/img/people/FanYang.webp" width="140" style="border-radius: 8px;">
   <div>
     <h3>Dr. Fan Yang</h3>
-    <p><strong>Postdoctoral researcher</strong></p>
-    <p>Research interests: satellite gravity, inverse problems, data assimilation, terrestrial water storage.</p>
+    <p><strong>Asisstant Professor</strong></p>
+    <p>Research interests: SPACE mission, satellite GEODESY, global WATER cycle and CLIMATE change.</p>
     <p>
       <a href="mailto:fany@plan.aau.dk"><i class="fa-solid fa-envelope"></i> | fany@plan.aau.dk</a>
     </p>
