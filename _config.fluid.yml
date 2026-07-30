@@ -265,7 +265,6 @@ custom_js:
 custom_css:
   - /css/code-scroll.css
   - /css/ncsg-projects.css
-  - /css/ncsg-projects-extra.css
   - https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css
   - https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css
 

@@ -1,4 +1,157 @@
-/* NCSG Projects page cards */
+/* =========================================================
+ * NCSG Projects merged styles
+ *
+ * 合并自：
+ * - ncsg-projects.css
+ * - ncsg-projects-extra.css
+ *
+ * 功能：
+ * 1. 双列卡片布局
+ * 2. 单列长条布局 .ncsg-project-grid--list
+ * 3. 浅色 / 深色主题适配
+ * 4. 自适应 SVG 图标颜色
+ * 5. 图片尺寸变量控制
+ * 6. 修复窄容器下单列布局显示异常的问题
+ * ========================================================= */
+
+
+/* =========================================================
+ * 1. Theme variables
+ * 默认浅色模式
+ * ========================================================= */
+
+:root {
+  /* ---------- 卡片颜色 ---------- */
+  --ncsg-project-card-bg: #ffffff;
+  --ncsg-project-card-bg-soft: #f8fafc;
+  --ncsg-project-card-text: #263244;
+  --ncsg-project-card-muted: #5f6b7a;
+  --ncsg-project-card-border: rgba(80, 100, 120, 0.24);
+  --ncsg-project-card-border-hover: #2d9cdb;
+  --ncsg-project-card-shadow-hover: 0 10px 28px rgba(20, 35, 55, 0.14);
+
+  --ncsg-project-logo-bg: #f3f6fa;
+
+  /* ---------- 链接按钮 ---------- */
+  --ncsg-project-link-bg: rgba(45, 156, 219, 0.10);
+  --ncsg-project-link-bg-hover: #2d9cdb;
+  --ncsg-project-link-text: #1f7fb4;
+  --ncsg-project-link-text-hover: #ffffff;
+
+  /* ---------- 自适应 SVG 图标 ---------- */
+  --ncsg-adaptive-icon-fill: #263244;
+  --ncsg-adaptive-icon-fill-hover: #1f7fb4;
+
+  /* ---------- 双列卡片图片尺寸 ---------- */
+  --ncsg-project-double-img-width: 30%;
+  --ncsg-project-double-img-max-width: 150px;
+  --ncsg-project-double-img-height: 160px;
+
+  /* ---------- 单列长条布局尺寸 ---------- */
+  --ncsg-project-list-media-width: 220px;
+  --ncsg-project-list-card-min-height: 170px;
+  --ncsg-project-list-img-size: 200px;
+
+  /* ---------- 窄屏 / 窄容器图片尺寸 ---------- */
+  --ncsg-project-mobile-img-width: 70%;
+  --ncsg-project-mobile-img-max-width: 210px;
+  --ncsg-project-mobile-img-height: 120px;
+
+  /* ---------- 单列布局变为上下结构的容器宽度 ---------- */
+  --ncsg-project-list-stack-breakpoint: 680px;
+}
+
+
+/* =========================================================
+ * 2. 系统深色模式兜底
+ * ========================================================= */
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ncsg-project-card-bg: rgba(30, 39, 50, 0.96);
+    --ncsg-project-card-bg-soft: rgba(33, 43, 55, 0.98);
+    --ncsg-project-card-text: #e8edf3;
+    --ncsg-project-card-muted: #d7dee8;
+    --ncsg-project-card-border: rgba(120, 140, 160, 0.45);
+    --ncsg-project-card-border-hover: #4db6e2;
+    --ncsg-project-card-shadow-hover: 0 10px 28px rgba(0, 0, 0, 0.28);
+
+    --ncsg-project-logo-bg: rgba(15, 23, 32, 0.36);
+
+    --ncsg-project-link-bg: rgba(77, 182, 226, 0.14);
+    --ncsg-project-link-bg-hover: #4db6e2;
+    --ncsg-project-link-text: #8bd4f2;
+    --ncsg-project-link-text-hover: #0d1b24;
+
+    --ncsg-adaptive-icon-fill: #e8edf3;
+    --ncsg-adaptive-icon-fill-hover: #8bd4f2;
+  }
+}
+
+
+/* =========================================================
+ * 3. Fluid / Hexo 显式深色模式
+ * ========================================================= */
+
+html[data-user-color-scheme="dark"],
+body[data-user-color-scheme="dark"],
+[data-user-color-scheme="dark"],
+html.dark,
+body.dark {
+  --ncsg-project-card-bg: rgba(30, 39, 50, 0.96);
+  --ncsg-project-card-bg-soft: rgba(33, 43, 55, 0.98);
+  --ncsg-project-card-text: #e8edf3;
+  --ncsg-project-card-muted: #d7dee8;
+  --ncsg-project-card-border: rgba(120, 140, 160, 0.45);
+  --ncsg-project-card-border-hover: #4db6e2;
+  --ncsg-project-card-shadow-hover: 0 10px 28px rgba(0, 0, 0, 0.28);
+
+  --ncsg-project-logo-bg: rgba(15, 23, 32, 0.36);
+
+  --ncsg-project-link-bg: rgba(77, 182, 226, 0.14);
+  --ncsg-project-link-bg-hover: #4db6e2;
+  --ncsg-project-link-text: #8bd4f2;
+  --ncsg-project-link-text-hover: #0d1b24;
+
+  --ncsg-adaptive-icon-fill: #e8edf3;
+  --ncsg-adaptive-icon-fill-hover: #8bd4f2;
+}
+
+
+/* =========================================================
+ * 4. Fluid / Hexo 显式浅色模式
+ * 放在深色模式之后，确保手动切换 light 时可以覆盖系统 dark
+ * ========================================================= */
+
+html[data-user-color-scheme="light"],
+body[data-user-color-scheme="light"],
+[data-user-color-scheme="light"],
+html.light,
+body.light {
+  --ncsg-project-card-bg: #ffffff;
+  --ncsg-project-card-bg-soft: #f8fafc;
+  --ncsg-project-card-text: #263244;
+  --ncsg-project-card-muted: #5f6b7a;
+  --ncsg-project-card-border: rgba(80, 100, 120, 0.24);
+  --ncsg-project-card-border-hover: #2d9cdb;
+  --ncsg-project-card-shadow-hover: 0 10px 28px rgba(20, 35, 55, 0.14);
+
+  --ncsg-project-logo-bg: #f3f6fa;
+
+  --ncsg-project-link-bg: rgba(45, 156, 219, 0.10);
+  --ncsg-project-link-bg-hover: #2d9cdb;
+  --ncsg-project-link-text: #1f7fb4;
+  --ncsg-project-link-text-hover: #ffffff;
+
+  --ncsg-adaptive-icon-fill: #263244;
+  --ncsg-adaptive-icon-fill-hover: #1f7fb4;
+}
+
+
+/* =========================================================
+ * 5. 基础项目网格
+ * 默认：双列卡片布局
+ * ========================================================= */
 
 .ncsg-project-grid {
   display: grid;
@@ -6,77 +159,607 @@
   gap: 6px;
   margin-top: 1.8rem;
   margin-bottom: 2rem;
+
+  /*
+   * 关键修复之一：
+   * 启用 container query。
+   * 这样即使浏览器视口没有小于 768px，
+   * 只要内容区域本身变窄，单列长条也能自动变成上下结构。
+   */
+  container-type: inline-size;
 }
+
+.ncsg-project-card,
+.ncsg-project-card * {
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+ * 6. 基础卡片样式
+ * ========================================================= */
 
 .ncsg-project-card {
   display: flex;
   flex-direction: column;
+
   min-height: 340px;
-  border: 1px solid rgba(120, 140, 160, 0.45);
+
+  border: 1px solid var(--ncsg-project-card-border);
   border-radius: 4px;
   overflow: hidden;
+
   text-decoration: none !important;
-  color: inherit !important;
-  background: rgba(30, 39, 50, 0.96);
-  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+  color: var(--ncsg-project-card-text) !important;
+  background: var(--ncsg-project-card-bg);
+
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease,
+    border-color 0.18s ease;
 }
 
 .ncsg-project-card:hover {
   transform: translateY(-3px);
-  border-color: #4db6e2;
-  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.28);
+  border-color: var(--ncsg-project-card-border-hover);
+  box-shadow: var(--ncsg-project-card-shadow-hover);
   text-decoration: none !important;
 }
 
 .ncsg-project-card-header {
   padding: 1.2rem 1.2rem 1rem;
+
   text-align: center;
-  border-bottom: 1px solid rgba(120, 140, 160, 0.35);
+
+  background: var(--ncsg-project-card-bg);
+  border-bottom: 1px solid var(--ncsg-project-card-border);
 }
 
 .ncsg-project-card-header h3 {
   margin: 0 0 1rem;
+
   font-size: 1.05rem;
   font-weight: 700;
-  color: #e8edf3;
+  line-height: 1.35;
+
+  color: var(--ncsg-project-card-text);
 }
 
-.ncsg-project-card-header img {
+.ncsg-project-card-header img,
+.ncsg-project-card-header svg.icon,
+.ncsg-project-card-header svg.ncsg-adaptive-icon {
   display: block;
+
   width: 62%;
   max-width: 220px;
   height: 150px;
+
   object-fit: contain;
+
   margin: 0 auto;
+
   opacity: 0.92;
 }
 
 .ncsg-project-card-body {
   flex: 1;
+
   padding: 1rem 1.3rem 1.2rem;
+
   text-align: center;
-  background: rgba(33, 43, 55, 0.98);
+
+  background: var(--ncsg-project-card-bg-soft);
 }
 
 .ncsg-project-card-body p {
   margin: 0;
+
   line-height: 1.65;
   font-size: 0.95rem;
-  color: #d7dee8;
+
+  color: var(--ncsg-project-card-muted);
 }
 
-/* Responsive layout */
+
+/* =========================================================
+ * 7. 双列布局中的图片 / SVG 尺寸控制
+ * 只作用于普通双列布局，不影响单列长条布局
+ * ========================================================= */
+
+.ncsg-project-grid:not(.ncsg-project-grid--list)
+  .ncsg-project-card-header img,
+.ncsg-project-grid:not(.ncsg-project-grid--list)
+  .ncsg-project-card-header svg.icon,
+.ncsg-project-grid:not(.ncsg-project-grid--list)
+  .ncsg-project-card-header svg.ncsg-adaptive-icon {
+  display: block;
+
+  width: var(--ncsg-project-double-img-width);
+  max-width: var(--ncsg-project-double-img-max-width);
+  height: var(--ncsg-project-double-img-height);
+
+  margin: 1rem auto;
+
+  object-fit: contain;
+}
+
+
+/* =========================================================
+ * 8. 单列长条布局
+ *
+ * 使用方式：
+ *
+ * <div class="ncsg-project-grid ncsg-project-grid--list">
+ *   ...
+ * </div>
+ *
+ * 桌面宽屏时：
+ * 左侧图片，右侧标题和简介。
+ * ========================================================= */
+
+.ncsg-project-grid.ncsg-project-grid--list {
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.ncsg-project-grid--list .ncsg-project-card {
+  display: grid;
+  grid-template-columns: var(--ncsg-project-list-media-width) minmax(0, 1fr);
+  grid-template-rows: auto 1fr;
+
+  min-height: var(--ncsg-project-list-card-min-height);
+
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+
+/* 左侧图片区背景 */
+.ncsg-project-grid--list .ncsg-project-card::before {
+  content: "";
+
+  grid-column: 1;
+  grid-row: 1 / span 2;
+
+  background: var(--ncsg-project-logo-bg);
+  border-right: 1px solid var(--ncsg-project-card-border);
+
+  z-index: 0;
+}
+
+
+/*
+ * 兼容原 HTML 结构：
+ *
+ * .ncsg-project-card
+ *   .ncsg-project-card-header
+ *     h3
+ *     img
+ *   .ncsg-project-card-body
+ *     p
+ *
+ * 宽屏下使用 display: contents，
+ * 让 h3 和 img 直接参与 card 的 grid 布局。
+ */
+.ncsg-project-grid--list .ncsg-project-card-header {
+  display: contents;
+
+  padding: 0;
+  border-bottom: none;
+  text-align: left;
+}
+
+
+/* 单列长条：左侧图片 / SVG */
+.ncsg-project-grid--list .ncsg-project-card-header img,
+.ncsg-project-grid--list .ncsg-project-card-header svg.icon,
+.ncsg-project-grid--list .ncsg-project-card-header svg.ncsg-adaptive-icon {
+  grid-column: 1;
+  grid-row: 1 / span 2;
+
+  align-self: center;
+  justify-self: center;
+
+  width: var(--ncsg-project-list-img-size);
+  max-width: calc(var(--ncsg-project-list-media-width) - 2rem);
+  height: var(--ncsg-project-list-img-size);
+  min-height: 0;
+
+  padding: 0;
+  margin: 0;
+
+  object-fit: contain;
+
+  background: transparent;
+  border-right: none;
+
+  opacity: 0.96;
+
+  z-index: 1;
+}
+
+
+/* 单列长条：右侧标题 */
+.ncsg-project-grid--list .ncsg-project-card-header h3 {
+  grid-column: 2;
+  grid-row: 1;
+
+  margin: 0;
+  padding: 1.25rem 1.5rem 0.35rem;
+
+  font-size: 1.2rem;
+  font-weight: 700;
+  line-height: 1.35;
+
+  text-align: left;
+
+  color: var(--ncsg-project-card-text);
+
+  z-index: 1;
+}
+
+
+/* 单列长条：右侧简介 */
+.ncsg-project-grid--list .ncsg-project-card-body {
+  grid-column: 2;
+  grid-row: 2;
+
+  min-width: 0;
+
+  padding: 0.25rem 1.5rem 1.25rem;
+
+  text-align: left;
+  background: var(--ncsg-project-card-bg);
+
+  z-index: 1;
+}
+
+.ncsg-project-grid--list .ncsg-project-card-body p {
+  margin: 0;
+  max-width: 760px;
+
+  font-size: 0.98rem;
+  line-height: 1.7;
+
+  color: var(--ncsg-project-card-muted);
+}
+
+
+/* =========================================================
+ * 9. Links 按钮样式
+ *
+ * 如果在 body 中添加：
+ *
+ * <div class="ncsg-project-card-links">
+ *   <a href="...">GitHub</a>
+ *   <a href="...">Docs</a>
+ * </div>
+ *
+ * 会自动显示为按钮。
+ * ========================================================= */
+
+.ncsg-project-card-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+
+  margin-top: 1rem;
+}
+
+.ncsg-project-card-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0.34rem 0.75rem;
+  border-radius: 999px;
+
+  font-size: 0.85rem;
+  font-weight: 600;
+  line-height: 1.4;
+
+  color: var(--ncsg-project-link-text) !important;
+  background: var(--ncsg-project-link-bg);
+  border: 1px solid rgba(45, 156, 219, 0.28);
+
+  text-decoration: none !important;
+
+  transition:
+    color 0.16s ease,
+    background-color 0.16s ease,
+    border-color 0.16s ease,
+    transform 0.16s ease;
+}
+
+.ncsg-project-card-links a:hover {
+  color: var(--ncsg-project-link-text-hover) !important;
+  background: var(--ncsg-project-link-bg-hover);
+  border-color: var(--ncsg-project-link-bg-hover);
+
+  transform: translateY(-1px);
+  text-decoration: none !important;
+}
+
+
+/* =========================================================
+ * 10. 自适应 SVG 图标
+ * ========================================================= */
+
+.ncsg-adaptive-icon {
+  transition:
+    fill 0.18s ease,
+    opacity 0.18s ease,
+    transform 0.18s ease;
+}
+
+/* 覆盖 SVG 内部写死的 fill */
+.ncsg-adaptive-icon path:not([fill="none"]),
+.ncsg-adaptive-icon circle:not([fill="none"]),
+.ncsg-adaptive-icon rect:not([fill="none"]),
+.ncsg-adaptive-icon polygon:not([fill="none"]),
+.ncsg-adaptive-icon polyline:not([fill="none"]),
+.ncsg-adaptive-icon ellipse:not([fill="none"]) {
+  fill: var(--ncsg-adaptive-icon-fill) !important;
+  transition: fill 0.18s ease;
+}
+
+/* 兼容 stroke 描边图标 */
+.ncsg-adaptive-icon path[stroke]:not([stroke="none"]),
+.ncsg-adaptive-icon line[stroke]:not([stroke="none"]),
+.ncsg-adaptive-icon circle[stroke]:not([stroke="none"]),
+.ncsg-adaptive-icon rect[stroke]:not([stroke="none"]),
+.ncsg-adaptive-icon polyline[stroke]:not([stroke="none"]),
+.ncsg-adaptive-icon polygon[stroke]:not([stroke="none"]) {
+  stroke: var(--ncsg-adaptive-icon-fill) !important;
+  transition: stroke 0.18s ease;
+}
+
+/* 卡片 hover 时图标变强调色 */
+.ncsg-project-card:hover .ncsg-adaptive-icon path:not([fill="none"]),
+.ncsg-project-card:hover .ncsg-adaptive-icon circle:not([fill="none"]),
+.ncsg-project-card:hover .ncsg-adaptive-icon rect:not([fill="none"]),
+.ncsg-project-card:hover .ncsg-adaptive-icon polygon:not([fill="none"]),
+.ncsg-project-card:hover .ncsg-adaptive-icon polyline:not([fill="none"]),
+.ncsg-project-card:hover .ncsg-adaptive-icon ellipse:not([fill="none"]) {
+  fill: var(--ncsg-adaptive-icon-fill-hover) !important;
+}
+
+.ncsg-project-card:hover .ncsg-adaptive-icon path[stroke]:not([stroke="none"]),
+.ncsg-project-card:hover .ncsg-adaptive-icon line[stroke]:not([stroke="none"]),
+.ncsg-project-card:hover .ncsg-adaptive-icon circle[stroke]:not([stroke="none"]),
+.ncsg-project-card:hover .ncsg-adaptive-icon rect[stroke]:not([stroke="none"]),
+.ncsg-project-card:hover .ncsg-adaptive-icon polyline[stroke]:not([stroke="none"]),
+.ncsg-project-card:hover .ncsg-adaptive-icon polygon[stroke]:not([stroke="none"]) {
+  stroke: var(--ncsg-adaptive-icon-fill-hover) !important;
+}
+
+
+/* =========================================================
+ * 11. 普通双列布局的移动端响应
+ * 非 .ncsg-project-grid--list 时使用
+ * ========================================================= */
+
 @media (max-width: 768px) {
-  .ncsg-project-grid {
+  .ncsg-project-grid:not(.ncsg-project-grid--list) {
     grid-template-columns: 1fr;
   }
 
-  .ncsg-project-card {
+  .ncsg-project-grid:not(.ncsg-project-grid--list) .ncsg-project-card {
     min-height: auto;
   }
 
-  .ncsg-project-card-header img {
+  .ncsg-project-grid:not(.ncsg-project-grid--list)
+    .ncsg-project-card-header img,
+  .ncsg-project-grid:not(.ncsg-project-grid--list)
+    .ncsg-project-card-header svg.icon,
+  .ncsg-project-grid:not(.ncsg-project-grid--list)
+    .ncsg-project-card-header svg.ncsg-adaptive-icon {
     width: 55%;
     height: 130px;
+  }
+}
+
+
+/* =========================================================
+ * 12. 单列长条布局在窄容器下自动变为：
+ *
+ * 标题
+ * 图片
+ * 简介
+ *
+ * 这是修复你截图中 bug 的关键部分。
+ *
+ * 使用 container query，而不是只依赖浏览器 viewport。
+ * ========================================================= */
+
+@container (max-width: 680px) {
+  .ncsg-project-grid--list .ncsg-project-card {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+
+    min-height: auto;
+  }
+
+  .ncsg-project-grid--list .ncsg-project-card::before {
+    display: none;
+  }
+
+  .ncsg-project-grid--list .ncsg-project-card-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    grid-column: 1;
+    grid-row: 1;
+
+    padding: 1.1rem 2.5rem 0.9rem;
+
+    text-align: center;
+
+    background: var(--ncsg-project-logo-bg);
+    border-bottom: 1px solid var(--ncsg-project-card-border);
+  }
+
+  .ncsg-project-grid--list .ncsg-project-card-header h3 {
+    order: 1;
+
+    grid-column: auto;
+    grid-row: auto;
+
+    margin: 0 0 0.75rem;
+    padding: 0;
+
+    font-size: 1.1rem;
+    line-height: 1.35;
+    text-align: center;
+  }
+
+  .ncsg-project-grid--list .ncsg-project-card-header img,
+  .ncsg-project-grid--list .ncsg-project-card-header svg.icon,
+  .ncsg-project-grid--list .ncsg-project-card-header svg.ncsg-adaptive-icon {
+    order: 2;
+
+    grid-column: auto;
+    grid-row: auto;
+
+    align-self: center;
+    justify-self: center;
+
+    width: var(--ncsg-project-mobile-img-width);
+    max-width: var(--ncsg-project-mobile-img-max-width);
+    height: var(--ncsg-project-mobile-img-height);
+    min-height: 0;
+
+    margin: 0 auto;
+    padding: 0;
+
+    object-fit: contain;
+
+    background: transparent;
+    border-right: none;
+  }
+
+  .ncsg-project-grid--list .ncsg-project-card-body {
+    grid-column: 1;
+    grid-row: 2;
+
+    padding: 1rem 2.5rem 1.25rem;
+
+    text-align: center;
+
+    background: var(--ncsg-project-card-bg);
+  }
+
+  .ncsg-project-grid--list .ncsg-project-card-body p {
+    max-width: none;
+
+    font-size: 0.95rem;
+    line-height: 1.7;
+  }
+
+  .ncsg-project-grid--list .ncsg-project-card-links {
+    justify-content: center;
+  }
+}
+
+
+/* =========================================================
+ * 13. 兼容不支持 container query 的浏览器
+ * 当视口过窄时，也强制切换为上下结构
+ * ========================================================= */
+
+@media (max-width: 768px) {
+  .ncsg-project-grid.ncsg-project-grid--list {
+    gap: 1rem;
+  }
+
+  .ncsg-project-grid--list .ncsg-project-card {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+
+    min-height: auto;
+  }
+
+  .ncsg-project-grid--list .ncsg-project-card::before {
+    display: none;
+  }
+
+  .ncsg-project-grid--list .ncsg-project-card-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    grid-column: 1;
+    grid-row: 1;
+
+    padding: 1.1rem 1.2rem 0.9rem;
+
+    text-align: center;
+
+    background: var(--ncsg-project-logo-bg);
+    border-bottom: 1px solid var(--ncsg-project-card-border);
+  }
+
+  .ncsg-project-grid--list .ncsg-project-card-header h3 {
+    order: 1;
+
+    grid-column: auto;
+    grid-row: auto;
+
+    margin: 0 0 0.75rem;
+    padding: 0;
+
+    font-size: 1.1rem;
+    line-height: 1.35;
+    text-align: center;
+  }
+
+  .ncsg-project-grid--list .ncsg-project-card-header img,
+  .ncsg-project-grid--list .ncsg-project-card-header svg.icon,
+  .ncsg-project-grid--list .ncsg-project-card-header svg.ncsg-adaptive-icon {
+    order: 2;
+
+    grid-column: auto;
+    grid-row: auto;
+
+    align-self: center;
+    justify-self: center;
+
+    width: var(--ncsg-project-mobile-img-width);
+    max-width: var(--ncsg-project-mobile-img-max-width);
+    height: var(--ncsg-project-mobile-img-height);
+    min-height: 0;
+
+    margin: 0 auto;
+    padding: 0;
+
+    object-fit: contain;
+
+    background: transparent;
+    border-right: none;
+  }
+
+  .ncsg-project-grid--list .ncsg-project-card-body {
+    grid-column: 1;
+    grid-row: 2;
+
+    padding: 1rem 1.2rem 1.25rem;
+
+    text-align: center;
+
+    background: var(--ncsg-project-card-bg);
+  }
+
+  .ncsg-project-grid--list .ncsg-project-card-body p {
+    max-width: none;
+
+    font-size: 0.95rem;
+    line-height: 1.7;
+  }
+
+  .ncsg-project-grid--list .ncsg-project-card-links {
+    justify-content: center;
   }
 }
