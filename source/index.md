@@ -2,17 +2,24 @@
 title: Welcome to NCSG group for numerical computation and satellite gravity! We here provide useful software for satellite gravity computation.
 ---
 
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+/>
+
 The NCSG Group focuses on numerical computation, satellite gravity, geodesy, and Earth system mass transport. We develop computational methods and satellite gravity techniques to investigate mass redistribution in the Earth system.
 
-[🌟<u>Software</u>](/software/) | [👥<u>Developers</u>](/developers/) | [📖<u>Publications</u>](/publications/)
+[<i class="fa-solid fa-code"></i> <u>Software</u>](/software/) |
+[<i class="fa-solid fa-users"></i> <u>Developers</u>](/developers/) |
+[<i class="fa-solid fa-book"></i> <u>Publications</u>](/publications/)
 
 ---
 
 ## Software
 
-<div class="ncsg-project-grid">
+<div class="ncsg-project-grid ncsg-project-grid--list">
 
-  <a class="ncsg-project-card" href="/software/pyhawk/">
+  <a class="ncsg-project-card" href="https://github.com/NCSGgroup/PyHawk">
     <div class="ncsg-project-card-header">
       <h3>PyHawk</h3>
       <img src="../img/projects/logo_pyhawk.webp" alt="Satellite gravity project">

@@ -6,43 +6,36 @@ title: "Documentary for SaGEA"
 
 ---
 
-<div style="text-align: center">
-    <img src="../../../img/projects/logo_sagea.webp" width="640">
-</div>
-
-**Updated date:** Jul 28, 2026
-
-**Latest version:** 0.2.9
-
-**Useful Link:
-** [<u>Source repository</u>](https://github.com/NCSGgroup/SaGEA) | [<u>Contact us</u>](https://github.com/orgs/NCSGgroup/discussions)
+{% include_md software/sagea/_meta/_sagea.overview.md %}
 
 ---
+
 # SaGEA Documentary
 
-Ae whole documentary file for SaGEA can be found at [<u>SaGEA Github repository</u>](https://github.com/NCSGgroup/SaGEA/blob/main/DOCUMENTATION.md)
+Ae whole documentary file for SaGEA can be found
+at [<u>SaGEA Github repository</u>](https://github.com/NCSGgroup/SaGEA/blob/main/DOCUMENTATION.md)
 
 ## Table of Contents
 
 1. [Introduction](#1-introduction)
 2. [Installation](#2-installation)
 3. [Core Data Classes](#3-core-data-classes)
-   - 3.1 [SHC — Spherical Harmonic Coefficients](#31-shc--spherical-harmonic-coefficients)
-   - 3.2 [GRD — Gridded Data](#32-grd--gridded-data)
+    - 3.1 [SHC — Spherical Harmonic Coefficients](#31-shc--spherical-harmonic-coefficients)
+    - 3.2 [GRD — Gridded Data](#32-grd--gridded-data)
 4. [Post-Processing L2 Products](#4-post-processing-l2-products)
-   - 4.1 [Loading Data](#41-loading-data)
-   - 4.2 [Low-Degree Coefficient Replacement](#42-low-degree-coefficient-replacement)
-   - 4.3 [GIA Removal](#43-gia-removal)
-   - 4.4 [Filtering](#44-filtering)
-   - 4.5 [Geometric Correction](#45-geometric-correction)
-   - 4.6 [Unit Conversion](#46-unit-conversion)
-   - 4.7 [Harmonic Synthesis and Regional Extraction](#47-harmonic-synthesis-and-regional-extraction)
-   - 4.8 [Complete Post-Processing Example](#48-complete-post-processing-example)
+    - 4.1 [Loading Data](#41-loading-data)
+    - 4.2 [Low-Degree Coefficient Replacement](#42-low-degree-coefficient-replacement)
+    - 4.3 [GIA Removal](#43-gia-removal)
+    - 4.4 [Filtering](#44-filtering)
+    - 4.5 [Geometric Correction](#45-geometric-correction)
+    - 4.6 [Unit Conversion](#46-unit-conversion)
+    - 4.7 [Harmonic Synthesis and Regional Extraction](#47-harmonic-synthesis-and-regional-extraction)
+    - 4.8 [Complete Post-Processing Example](#48-complete-post-processing-example)
 5. [Error Analysis](#5-error-analysis)
-   - 5.1 [Error-I: Formal Error / VCM Propagation](#51-error-i-formal-error--vcm-propagation)
-   - 5.2 [Error-II: Between-Product Discrepancy (TCH and TCA)](#52-error-ii-between-product-discrepancy-tch-and-tca)
-   - 5.3 [Error-III: Post-Processing Chain Uncertainty](#53-error-iii-post-processing-chain-uncertainty)
-   - 5.4 [Complete Error Analysis Example](#54-complete-error-analysis-example)
+    - 5.1 [Error-I: Formal Error / VCM Propagation](#51-error-i-formal-error--vcm-propagation)
+    - 5.2 [Error-II: Between-Product Discrepancy (TCH and TCA)](#52-error-ii-between-product-discrepancy-tch-and-tca)
+    - 5.3 [Error-III: Post-Processing Chain Uncertainty](#53-error-iii-post-processing-chain-uncertainty)
+    - 5.4 [Complete Error Analysis Example](#54-complete-error-analysis-example)
 6. [API Reference](#6-api-reference)
 7. [References](#7-references)
 
@@ -60,11 +53,11 @@ post-processing chain** involving filtering, low-degree replacement, physical un
 Furthermore, the resulting estimates carry **three distinct classes of uncertainty** that are often overlooked or
 treated inconsistently in the literature:
 
-| Error type | Source | SaGEA term |
-|---|---|---|
-| Formal / propagated instrument noise | VCM of Level-2 SHCs, instrument noise, background-model errors | **Error-I** |
-| Between-solution discrepancy | Different Level-2 producers (CSR, GFZ, JPL, ITSG, …) | **Error-II** |
-| Post-processing chain uncertainty | Non-unique choices of filter, correction, leakage method | **Error-III** |
+| Error type                           | Source                                                         | SaGEA term    |
+|--------------------------------------|----------------------------------------------------------------|---------------|
+| Formal / propagated instrument noise | VCM of Level-2 SHCs, instrument noise, background-model errors | **Error-I**   |
+| Between-solution discrepancy         | Different Level-2 producers (CSR, GFZ, JPL, ITSG, …)           | **Error-II**  |
+| Post-processing chain uncertainty    | Non-unique choices of filter, correction, leakage method       | **Error-III** |
 
 **SaGEA** integrates a comprehensive set of post-processing tools and all three error assessment strategies into a
 single, Python-native, open-source toolbox. Its design philosophy is:
@@ -117,14 +110,14 @@ Coefficients are stored in a 2-D array of shape `(ntime, (lmax+1)²)`. The secon
 
 **Key attributes**
 
-| Attribute | Type | Description |
-|---|---|---|
-| `.value` | `ndarray (ntime, ncoef)` | Raw coefficient array |
-| `.lmax` | `int` | Maximum degree |
-| `.ntime` | `int` | Number of epochs |
-| `.mean` | `ndarray (ncoef,)` | Time-mean coefficients |
-| `.std` | `ndarray (ncoef,)` | Coefficient std over time |
-| `.degree_rms` | `ndarray (lmax+1,)` | Degree-RMS spectrum |
+| Attribute     | Type                     | Description               |
+|---------------|--------------------------|---------------------------|
+| `.value`      | `ndarray (ntime, ncoef)` | Raw coefficient array     |
+| `.lmax`       | `int`                    | Maximum degree            |
+| `.ntime`      | `int`                    | Number of epochs          |
+| `.mean`       | `ndarray (ncoef,)`       | Time-mean coefficients    |
+| `.std`        | `ndarray (ncoef,)`       | Coefficient std over time |
+| `.degree_rms` | `ndarray (lmax+1,)`      | Degree-RMS spectrum       |
 
 **Accessor namespaces**
 
@@ -132,9 +125,9 @@ Coefficients are stored in a 2-D array of shape `(ntime, (lmax+1)²)`. The secon
 methods and their signatures:
 
 ```python
-SHC.io.help()          # I/O: reading and writing .gfc files
-SHC.generate.help()    # generators: from array, from trend, from VCM
-shc.filter.help()      # filtering methods
+SHC.io.help()  # I/O: reading and writing .gfc files
+SHC.generate.help()  # generators: from array, from trend, from VCM
+shc.filter.help()  # filtering methods
 shc.synthesize.help()  # harmonic synthesis to GRD or discrete points
 shc.correction.help()  # geometric and other corrections
 ```
@@ -158,12 +151,12 @@ grd = sagea.GRD(grid_array, lat=lat, lon=lon)
 
 **Key attributes**
 
-| Attribute | Description |
-|---|---|
-| `.value` | `ndarray (ntime, nlat, nlon)` — always 3-D internally |
-| `.lat`, `.lon` | Coordinate arrays (degrees) |
-| `.mean` | Time-mean grid |
-| `.std` | Standard deviation over time |
+| Attribute      | Description                                           |
+|----------------|-------------------------------------------------------|
+| `.value`       | `ndarray (ntime, nlat, nlon)` — always 3-D internally |
+| `.lat`, `.lon` | Coordinate arrays (degrees)                           |
+| `.mean`        | Time-mean grid                                        |
+| `.std`         | Standard deviation over time                          |
 
 **Extract accessor**
 
@@ -218,11 +211,11 @@ GRACE Level-2 products lack **degree-1 coefficients** (geocenter motion) and hav
 
 SaGEA provides `sagea.sgio.read_low_degs` to parse the standard GRACE Technical Note files:
 
-| Technical Note | Coefficients provided |
-|---|---|
-| TN-13 | Degree-1: C(1,0), C(1,1), S(1,1) |
-| TN-14 | C20, C30 |
-| TN-11 | C20 only |
+| Technical Note | Coefficients provided            |
+|----------------|----------------------------------|
+| TN-13          | Degree-1: C(1,0), C(1,1), S(1,1) |
+| TN-14          | C20, C30                         |
+| TN-11          | C20 only                         |
 
 ```python
 from sagea.sgio import read_low_degs
@@ -238,6 +231,7 @@ low_deg.update(read_low_degs(path_TN14, dates=dates))
 
 # De-mean each replacement series, then apply
 import numpy as np
+
 for key in ("c1,0", "c1,1", "s1,1", "c2,0", "c3,0"):
     vals = low_deg[key]
     low_deg[key] -= np.nanmean(vals)
@@ -268,16 +262,16 @@ epoch in `dates`.
 GRACE Level-2 solutions contain correlated noise (north–south stripes) at high degrees. SaGEA provides the
 following spectral filtering methods through the `shc.filter` accessor:
 
-| Method | Parameters | Reference |
-|---|---|---|
-| `gaussian(radius)` | radius in km | Wahr et al. (1998) |
-| `fan(radius1, radius2)` | radii in km | Zhang et al. (2009) |
-| `han(radius1, radius2, m0)` | radii in km | Han et al. (2005) |
-| `ddk(ddk_id)` | id = 1–8 | Kusche (2007) |
-| `pnmm(n, m)` | polynomial degree, order | Chambers (2006) |
-| `slidewindowSwenson2006(n, m, a, k, window_length_min)` | — | Swenson & Wahr (2006) |
-| `slidewindowDuan2009(n, m, a, k, window_length_min, gamma, p)` | — | Duan et al. (2009) |
-| `fsc(vcm_err, vcm_sig_list, ...)` | VCM-based | Bayesian-VCE |
+| Method                                                         | Parameters               | Reference             |
+|----------------------------------------------------------------|--------------------------|-----------------------|
+| `gaussian(radius)`                                             | radius in km             | Wahr et al. (1998)    |
+| `fan(radius1, radius2)`                                        | radii in km              | Zhang et al. (2009)   |
+| `han(radius1, radius2, m0)`                                    | radii in km              | Han et al. (2005)     |
+| `ddk(ddk_id)`                                                  | id = 1–8                 | Kusche (2007)         |
+| `pnmm(n, m)`                                                   | polynomial degree, order | Chambers (2006)       |
+| `slidewindowSwenson2006(n, m, a, k, window_length_min)`        | —                        | Swenson & Wahr (2006) |
+| `slidewindowDuan2009(n, m, a, k, window_length_min, gamma, p)` | —                        | Duan et al. (2009)    |
+| `fsc(vcm_err, vcm_sig_list, ...)`                              | VCM-based                | Bayesian-VCE          |
 
 All methods accept `inplace=False` (default) and return an `SHC` instance.
 
@@ -304,8 +298,8 @@ and over mountain ranges. SaGEA implements the correction of Yang et al. (2022):
 ```python
 shc_corrected = shc_filtered.correction.geometric(
     auto_load_actual_earth=True,
-    phisfc_file="/path/to/PHISFC_ERA5_invariant.nc",   # ERA5 surface geopotential
-    gif48_file="/path/to/GIF48.gfc",                   # static gravity model
+    phisfc_file="/path/to/PHISFC_ERA5_invariant.nc",  # ERA5 surface geopotential
+    gif48_file="/path/to/GIF48.gfc",  # static gravity model
     inplace=False,
     verbose=True,
 )
@@ -344,8 +338,8 @@ grid.value *= 100
 ```python
 import numpy as np
 
-lats = np.array([58.5, 57.5, 56.5])   # degrees north
-lons = np.array([26.5, 27.5, 28.5])   # degrees east
+lats = np.array([58.5, 57.5, 56.5])  # degrees north
+lons = np.array([26.5, 27.5, 28.5])  # degrees east
 
 ewh_pts = shc_ewh.synthesize.evaluate(lats, lons)  # shape (ntime, npoints)
 ```
@@ -361,7 +355,7 @@ from sagea.utils import TimeTool
 mask_grd = read_shp_as_GRD(
     "/data/basin_mask/Greenland/greenland.shp",
     grid_space=grid_space,
-    per_feature=True,    # each polygon → one epoch/mask
+    per_feature=True,  # each polygon → one epoch/mask
 )
 
 # Extract time series: shape (n_features, ntime)
@@ -385,10 +379,10 @@ from sagea.utils import TimeTool
 # ── 1. Paths ──────────────────────────────────────────────────────────────────
 paths_gfc = sorted(pathlib.Path("/data/ITSG/Grace2018/n60").rglob("ITSG*.gfc"))
 path_gif48 = pathlib.Path("/data/auxiliary/GIF48.gfc")
-path_TN13  = pathlib.Path("/data/TN-13_GEOC_JPL_RL06.3.txt")
-path_TN14  = pathlib.Path("/data/TN-14_C30_C20_SLR_GSFC.txt")
-path_gia   = pathlib.Path("/data/GIA/GIA.ICE-6G_D.txt")
-path_mask  = pathlib.Path("/data/basin_mask/Greenland/greenland.shp")
+path_TN13 = pathlib.Path("/data/TN-13_GEOC_JPL_RL06.3.txt")
+path_TN14 = pathlib.Path("/data/TN-14_C30_C20_SLR_GSFC.txt")
+path_gia = pathlib.Path("/data/GIA/GIA.ICE-6G_D.txt")
+path_mask = pathlib.Path("/data/basin_mask/Greenland/greenland.shp")
 
 lmax = 60
 
@@ -477,8 +471,8 @@ the code is identical to single-epoch processing:
 
 ```python
 shc_filtered = shc_samples.filter.gaussian(300)
-shc_ewh      = shc_filtered.convert(from_type="Geopotential", to_type="EWH")
-grid         = shc_ewh.synthesize.to_grid(grid_space=1)
+shc_ewh = shc_filtered.convert(from_type="Geopotential", to_type="EWH")
+grid = shc_ewh.synthesize.to_grid(grid_space=1)
 ```
 
 **Step 4 — Compute statistics over the ensemble**
@@ -488,12 +482,12 @@ import numpy as np
 import sagea
 
 # Pointwise standard deviation map
-std_values = np.std(grid.value, axis=0)          # shape (nlat, nlon)
-grid_std   = sagea.GRD(std_values * 100, lat=grid.lat, lon=grid.lon)  # cm
+std_values = np.std(grid.value, axis=0)  # shape (nlat, nlon)
+grid_std = sagea.GRD(std_values * 100, lat=grid.lat, lon=grid.lon)  # cm
 
 # Evaluate at discrete points and compute full covariance
 ewh_pts = shc_ewh.synthesize.evaluate(lats, lons)  # (nsample, npoints)
-cov_pts = np.cov(ewh_pts.T)                        # (npoints, npoints) covariance
+cov_pts = np.cov(ewh_pts.T)  # (npoints, npoints) covariance
 ```
 
 The resulting `grid_std` is a spatial map of the formal (Error-I) uncertainty in centimetres EWH for that month.
@@ -519,8 +513,8 @@ from sagea.error_assessment import tch, TCHMode
 # grid_csr, grid_gfz, grid_jpl: GRD instances from identical post-processing
 grid_err_csr, grid_err_gfz, grid_err_jpl = tch(
     grid_csr, grid_gfz, grid_jpl,
-    mode=TCHMode.OLS,                   # "OLS" or "KKT"
-    negative_variance_policy="NAN",     # "NAN" | "CLIP" | "ABS"
+    mode=TCHMode.OLS,  # "OLS" or "KKT"
+    negative_variance_policy="NAN",  # "NAN" | "CLIP" | "ABS"
     min_valid_obs=3,
 )
 # Each grid_err_* contains the estimated pointwise error std for that dataset.
@@ -528,9 +522,9 @@ grid_err_csr, grid_err_gfz, grid_err_jpl = tch(
 
 Available TCH modes:
 
-| Mode | Description |
-|---|---|
-| `TCHMode.OLS` | Pairwise difference variances solved via ordinary least squares (recommended for ≥3 datasets) |
+| Mode          | Description                                                                                      |
+|---------------|--------------------------------------------------------------------------------------------------|
+| `TCHMode.OLS` | Pairwise difference variances solved via ordinary least squares (recommended for ≥3 datasets)    |
 | `TCHMode.KKT` | KKT constrained optimization using the last dataset as reference (classic 3-product formulation) |
 
 **TCA**
@@ -540,17 +534,17 @@ from sagea.error_assessment import tca, TCAMode
 
 grid_err_csr, grid_err_gfz, grid_err_jpl = tca(
     grid_csr, grid_gfz, grid_jpl,
-    mode=TCAMode.CLASSIC,               # "CLASSIC" | "ALL_TRIPLETS" | "NLS"
+    mode=TCAMode.CLASSIC,  # "CLASSIC" | "ALL_TRIPLETS" | "NLS"
 )
 ```
 
 Available TCA modes:
 
-| Mode | Description |
-|---|---|
-| `TCAMode.CLASSIC` | Classic 3-product TCA: `σ²_i = C_ii − C_ij·C_ik / C_jk` (requires exactly 3 datasets) |
-| `TCAMode.ALL_TRIPLETS` | For N ≥ 3 datasets: evaluates all C(N,3) triplets, aggregates by `nanmedian` |
-| `TCAMode.NLS` | Multiple collocation via non-linear least squares fitting of off-diagonal covariances |
+| Mode                   | Description                                                                           |
+|------------------------|---------------------------------------------------------------------------------------|
+| `TCAMode.CLASSIC`      | Classic 3-product TCA: `σ²_i = C_ii − C_ij·C_ik / C_jk` (requires exactly 3 datasets) |
+| `TCAMode.ALL_TRIPLETS` | For N ≥ 3 datasets: evaluates all C(N,3) triplets, aggregates by `nanmedian`          |
+| `TCAMode.NLS`          | Multiple collocation via non-linear least squares fitting of off-diagonal covariances |
 
 **Working with SHC inputs**
 
@@ -574,9 +568,9 @@ tch_obj.configuration.set_mode("OLS")
 tch_obj.configuration.set_negative_variance_policy("NAN")
 tch_obj.configuration.set_min_valid_obs(3)
 
-tch_obj.set_datasets(x1, x2, x3)   # 1-D numpy arrays
+tch_obj.set_datasets(x1, x2, x3)  # 1-D numpy arrays
 variances = tch_obj.get_variance()  # ndarray (3,)
-stds      = tch_obj.get_std()       # ndarray (3,)
+stds = tch_obj.get_std()  # ndarray (3,)
 ```
 
 ### 5.3 Error-III: Post-Processing Chain Uncertainty
@@ -606,13 +600,14 @@ filters = [
 grids = []
 for filt in filters:
     shc_filt = filt(shc)
-    shc_ewh  = shc_filt.convert(from_type="Geopotential", to_type="EWH")
+    shc_ewh = shc_filt.convert(from_type="Geopotential", to_type="EWH")
     grids.append(shc_ewh.synthesize.to_grid(grid_space=1))
 
 # Compute ensemble spread
 import numpy as np
+
 ensemble = np.stack([g.value for g in grids], axis=0)  # (n_variants, ntime, nlat, nlon)
-std_chain = np.std(ensemble, axis=0)                    # (ntime, nlat, nlon)
+std_chain = np.std(ensemble, axis=0)  # (ntime, nlat, nlon)
 ```
 
 ---
@@ -621,98 +616,117 @@ std_chain = np.std(ensemble, axis=0)                    # (ntime, nlat, nlon)
 
 ### `sagea.SHC`
 
-| Member | Kind | Signature | Returns | Description |
-|---|---|---|---|---|
-| `SHC.io.from_gfc` | class method | `(filepath, lmax, key="gfc", ...)` | `SHC` | Read from `.gfc` file(s) |
-| `SHC.generate.from_array` | class method | `(cs, normalization, dates, attrs)` | `SHC` | Construct from array |
-| `SHC.generate.from_trend` | class method | `(shc_trend, dates, ref_time=None)` | `SHC` | Build linear trend time series |
-| `SHC.generate.normal_from_vcm` | class method | `(vcm, nsample=1, mean=None)` | `SHC` | Monte Carlo samples from VCM |
-| `shc.replace` | instance | `(*params, inplace=False)` | `SHC` | Replace individual coefficients |
-| `shc.convert` | instance | `(from_type, to_type, inplace=False)` | `SHC` | Physical unit conversion |
-| `shc.de_mean` | instance | `(inplace=False)` | `SHC` | Subtract temporal mean |
-| `shc.filter.gaussian` | instance | `(radius, inplace=False)` | `SHC` | Gaussian smoothing |
-| `shc.filter.fan` | instance | `(radius1, radius2, inplace=False)` | `SHC` | Fan filter |
-| `shc.filter.han` | instance | `(radius1, radius2, m0, inplace=False)` | `SHC` | Non-isotropic Gaussian |
-| `shc.filter.ddk` | instance | `(ddk_id, inplace=False)` | `SHC` | DDK filter (id 1–8) |
-| `shc.filter.pnmm` | instance | `(n, m, inplace=False)` | `SHC` | PnMm de-correlation |
-| `shc.filter.slidewindowSwenson2006` | instance | `(n, m, a, k, window_length_min, inplace=False)` | `SHC` | Moving-window de-correlation |
-| `shc.filter.slidewindowDuan2009` | instance | `(n, m, a, k, window_length_min, gamma, p, inplace=False)` | `SHC` | Moving-window de-correlation |
-| `shc.filter.fsc` | instance | `(vcm_err, vcm_sig_list, ...)` | `SHC` | Bayesian-VCE filter |
-| `shc.synthesize.to_grid` | instance | `(grid_space, grid_type=None)` | `GRD` | Harmonic synthesis to global grid |
-| `shc.synthesize.evaluate` | instance | `(lat, lon)` | `ndarray` | Evaluate at discrete lat/lon |
-| `shc.correction.geometric` | instance | `(auto_load_actual_earth, ..., inplace=False)` | `SHC` | Geometric/ellipsoidal correction |
-| `shc.io.save_file` | instance | `(filepath, index, header, key, ...)` | — | Write one epoch to `.gfc` file |
+| Member                              | Kind         | Signature                                                  | Returns   | Description                       |
+|-------------------------------------|--------------|------------------------------------------------------------|-----------|-----------------------------------|
+| `SHC.io.from_gfc`                   | class method | `(filepath, lmax, key="gfc", ...)`                         | `SHC`     | Read from `.gfc` file(s)          |
+| `SHC.generate.from_array`           | class method | `(cs, normalization, dates, attrs)`                        | `SHC`     | Construct from array              |
+| `SHC.generate.from_trend`           | class method | `(shc_trend, dates, ref_time=None)`                        | `SHC`     | Build linear trend time series    |
+| `SHC.generate.normal_from_vcm`      | class method | `(vcm, nsample=1, mean=None)`                              | `SHC`     | Monte Carlo samples from VCM      |
+| `shc.replace`                       | instance     | `(*params, inplace=False)`                                 | `SHC`     | Replace individual coefficients   |
+| `shc.convert`                       | instance     | `(from_type, to_type, inplace=False)`                      | `SHC`     | Physical unit conversion          |
+| `shc.de_mean`                       | instance     | `(inplace=False)`                                          | `SHC`     | Subtract temporal mean            |
+| `shc.filter.gaussian`               | instance     | `(radius, inplace=False)`                                  | `SHC`     | Gaussian smoothing                |
+| `shc.filter.fan`                    | instance     | `(radius1, radius2, inplace=False)`                        | `SHC`     | Fan filter                        |
+| `shc.filter.han`                    | instance     | `(radius1, radius2, m0, inplace=False)`                    | `SHC`     | Non-isotropic Gaussian            |
+| `shc.filter.ddk`                    | instance     | `(ddk_id, inplace=False)`                                  | `SHC`     | DDK filter (id 1–8)               |
+| `shc.filter.pnmm`                   | instance     | `(n, m, inplace=False)`                                    | `SHC`     | PnMm de-correlation               |
+| `shc.filter.slidewindowSwenson2006` | instance     | `(n, m, a, k, window_length_min, inplace=False)`           | `SHC`     | Moving-window de-correlation      |
+| `shc.filter.slidewindowDuan2009`    | instance     | `(n, m, a, k, window_length_min, gamma, p, inplace=False)` | `SHC`     | Moving-window de-correlation      |
+| `shc.filter.fsc`                    | instance     | `(vcm_err, vcm_sig_list, ...)`                             | `SHC`     | Bayesian-VCE filter               |
+| `shc.synthesize.to_grid`            | instance     | `(grid_space, grid_type=None)`                             | `GRD`     | Harmonic synthesis to global grid |
+| `shc.synthesize.evaluate`           | instance     | `(lat, lon)`                                               | `ndarray` | Evaluate at discrete lat/lon      |
+| `shc.correction.geometric`          | instance     | `(auto_load_actual_earth, ..., inplace=False)`             | `SHC`     | Geometric/ellipsoidal correction  |
+| `shc.io.save_file`                  | instance     | `(filepath, index, header, key, ...)`                      | —         | Write one epoch to `.gfc` file    |
 
 ### `sagea.GRD`
 
-| Member | Kind | Signature | Returns | Description |
-|---|---|---|---|---|
-| `GRD(grid, lat, lon, option=1)` | constructor | — | `GRD` | Create from array |
-| `grd.to_SHC` | instance | `(lmax)` | `SHC` | Harmonic analysis |
-| `grd.extract.maskGRD` | instance | `(mask, average=True)` | `ndarray` | Basin-integral / area-average |
-| `grd.plot` | instance | `(vmin, vmax, projection, ...)` | `(fig, axes)` | Global map visualization |
-| `grd.copy` | instance | `()` | `GRD` | Deep copy |
+| Member                          | Kind        | Signature                       | Returns       | Description                   |
+|---------------------------------|-------------|---------------------------------|---------------|-------------------------------|
+| `GRD(grid, lat, lon, option=1)` | constructor | —                               | `GRD`         | Create from array             |
+| `grd.to_SHC`                    | instance    | `(lmax)`                        | `SHC`         | Harmonic analysis             |
+| `grd.extract.maskGRD`           | instance    | `(mask, average=True)`          | `ndarray`     | Basin-integral / area-average |
+| `grd.plot`                      | instance    | `(vmin, vmax, projection, ...)` | `(fig, axes)` | Global map visualization      |
+| `grd.copy`                      | instance    | `()`                            | `GRD`         | Deep copy                     |
 
 ### `sagea.sgio` (also `sagea.io`)
 
-| Function | Signature | Returns | Description |
-|---|---|---|---|
-| `read_gfc` | `(filepath, key, lmax, ...)` | `SHC` or `ndarray` | Read ICGEM `.gfc` file |
-| `read_sinex_cov` | `(filepath, lmax)` | `(ndarray, list)` | Read SINEX VCM |
-| `read_low_degs` | `(filepath, dates)` | `dict` | Read TN-11/13/14 replacement coefficients |
-| `read_shp_as_GRD` | `(filepath, grid_space, per_feature)` | `GRD` | Rasterize shapefile to grid |
-| `read_shp_as_SHC` | `(filepath, lmax, per_feature)` | `SHC` | Rasterize shapefile to SHC |
+| Function          | Signature                             | Returns            | Description                               |
+|-------------------|---------------------------------------|--------------------|-------------------------------------------|
+| `read_gfc`        | `(filepath, key, lmax, ...)`          | `SHC` or `ndarray` | Read ICGEM `.gfc` file                    |
+| `read_sinex_cov`  | `(filepath, lmax)`                    | `(ndarray, list)`  | Read SINEX VCM                            |
+| `read_low_degs`   | `(filepath, dates)`                   | `dict`             | Read TN-11/13/14 replacement coefficients |
+| `read_shp_as_GRD` | `(filepath, grid_space, per_feature)` | `GRD`              | Rasterize shapefile to grid               |
+| `read_shp_as_SHC` | `(filepath, lmax, per_feature)`       | `SHC`              | Rasterize shapefile to SHC                |
 
 ### `sagea.error_assessment`
 
-| Function/Class | Signature | Returns | Description |
-|---|---|---|---|
+| Function/Class                                                  | Signature             | Returns | Description                         |
+|-----------------------------------------------------------------|-----------------------|---------|-------------------------------------|
 | `tch(*datasets, mode, negative_variance_policy, min_valid_obs)` | `GRD / SHC / ndarray` | `tuple` | Three-Cornered Hat error estimation |
-| `tca(*datasets, mode, negative_variance_policy, min_valid_obs)` | `GRD / SHC / ndarray` | `tuple` | Triple Collocation Analysis |
-| `TCHMode.OLS` | enum value | — | OLS-based TCH |
-| `TCHMode.KKT` | enum value | — | KKT-based TCH |
-| `TCAMode.CLASSIC` | enum value | — | Classic 3-product TCA |
-| `TCAMode.ALL_TRIPLETS` | enum value | — | All-triplets aggregation |
-| `TCAMode.NLS` | enum value | — | Non-linear least squares TCA |
+| `tca(*datasets, mode, negative_variance_policy, min_valid_obs)` | `GRD / SHC / ndarray` | `tuple` | Triple Collocation Analysis         |
+| `TCHMode.OLS`                                                   | enum value            | —       | OLS-based TCH                       |
+| `TCHMode.KKT`                                                   | enum value            | —       | KKT-based TCH                       |
+| `TCAMode.CLASSIC`                                               | enum value            | —       | Classic 3-product TCA               |
+| `TCAMode.ALL_TRIPLETS`                                          | enum value            | —       | All-triplets aggregation            |
+| `TCAMode.NLS`                                                   | enum value            | —       | Non-linear least squares TCA        |
 
 ---
 
 ## 7. References
 
-A, G., Wahr, J., Zhong, S. (2013). Computations of the viscoelastic response of a 3-D compressible Earth to surface loading. *Geophys. J. Int.*, 192, 557–572. https://doi.org/10.1093/gji/ggs030
+A, G., Wahr, J., Zhong, S. (2013). Computations of the viscoelastic response of a 3-D compressible Earth to surface
+loading. *Geophys. J. Int.*, 192, 557–572. https://doi.org/10.1093/gji/ggs030
 
-Chen, J. L., et al. (2007). GRACE detects coseismic and postseismic deformation from the Sumatra-Andaman earthquake. *Geophys. Res. Lett.*, 34. https://doi.org/10.1029/2007gl030356
+Chen, J. L., et al. (2007). GRACE detects coseismic and postseismic deformation from the Sumatra-Andaman earthquake.
+*Geophys. Res. Lett.*, 34. https://doi.org/10.1029/2007gl030356
 
-Chen, J. L., et al. (2021). Error Assessment of GRACE and GRACE Follow-On Mass Change. *J. Geophys. Res. Solid Earth*, 126. https://doi.org/10.1029/2021jb022124
+Chen, J. L., et al. (2021). Error Assessment of GRACE and GRACE Follow-On Mass Change. *J. Geophys. Res. Solid Earth*,
+126. https://doi.org/10.1029/2021jb022124
 
-Cheng, M., & Ries, J. (2017). The unexpected signal in GRACE estimates of C20. *J. Geodesy*, 91(8), 897–914. https://doi.org/10.1007/s00190-016-0995-5
+Cheng, M., & Ries, J. (2017). The unexpected signal in GRACE estimates of C20. *J. Geodesy*, 91(8),
+897–914. https://doi.org/10.1007/s00190-016-0995-5
 
-Ditmar, P. (2018). Conversion of time-varying Stokes coefficients into mass anomalies at the Earth's surface. *J. Geodesy*, 92(12), 1401–1412. https://doi.org/10.1007/s00190-018-1128-0
+Ditmar, P. (2018). Conversion of time-varying Stokes coefficients into mass anomalies at the Earth's surface. *J.
+Geodesy*, 92(12), 1401–1412. https://doi.org/10.1007/s00190-018-1128-0
 
-Duan, X. J., et al. (2009). On the postprocessing removal of correlated errors in GRACE temporal gravity field solutions. *J. Geodesy*, 83(11), 1095–1106. https://doi.org/10.1007/s00190-009-0327-0
+Duan, X. J., et al. (2009). On the postprocessing removal of correlated errors in GRACE temporal gravity field
+solutions. *J. Geodesy*, 83(11), 1095–1106. https://doi.org/10.1007/s00190-009-0327-0
 
-Ferreira, V., et al. (2016). Uncertainties of GRACE time-variable gravity-field solutions based on three-cornered hat method. *J. Appl. Remote Sensing*, 10, 015015. https://doi.org/10.1117/1.JRS.10.015015
+Ferreira, V., et al. (2016). Uncertainties of GRACE time-variable gravity-field solutions based on three-cornered hat
+method. *J. Appl. Remote Sensing*, 10, 015015. https://doi.org/10.1117/1.JRS.10.015015
 
-Han, S.-C., et al. (2005). Non-isotropic filtering of GRACE temporal gravity for geophysical signal enhancement. *Geophys. J. Int.*, 163(1), 18–25. https://doi.org/10.1111/j.1365-246x.2005.02756.x
+Han, S.-C., et al. (2005). Non-isotropic filtering of GRACE temporal gravity for geophysical signal enhancement.
+*Geophys. J. Int.*, 163(1), 18–25. https://doi.org/10.1111/j.1365-246x.2005.02756.x
 
-Kusche, J. (2007). Approximate decorrelation and non-isotropic smoothing of time-variable GRACE-type gravity field models. *J. Geodesy*, 81(11), 733–749. https://doi.org/10.1007/s00190-007-0143-3
+Kusche, J. (2007). Approximate decorrelation and non-isotropic smoothing of time-variable GRACE-type gravity field
+models. *J. Geodesy*, 81(11), 733–749. https://doi.org/10.1007/s00190-007-0143-3
 
-Kvas, A., et al. (2019). ITSG-Grace2018: Overview and evaluation. *J. Geophys. Res. Solid Earth*, 124, 9332–9344. https://doi.org/10.1029/2019JB017415
+Kvas, A., et al. (2019). ITSG-Grace2018: Overview and evaluation. *J. Geophys. Res. Solid Earth*, 124,
+9332–9344. https://doi.org/10.1029/2019JB017415
 
-Landerer, F. W., & Swenson, S. C. (2012). Accuracy of scaled GRACE terrestrial water storage estimates. *Water Resour. Res.*, 48(4). https://doi.org/10.1029/2011wr011453
+Landerer, F. W., & Swenson, S. C. (2012). Accuracy of scaled GRACE terrestrial water storage estimates. *Water Resour.
+Res.*, 48(4). https://doi.org/10.1029/2011wr011453
 
-Liu, S., Yang, F., & Forootan, E. (2025). SAGEA: A toolbox for comprehensive error assessment of GRACE and GRACE-FO based mass changes. *Computers & Geosciences*, 196, 105825. https://doi.org/10.1016/j.cageo.2024.105825
+Liu, S., Yang, F., & Forootan, E. (2025). SAGEA: A toolbox for comprehensive error assessment of GRACE and GRACE-FO
+based mass changes. *Computers & Geosciences*, 196, 105825. https://doi.org/10.1016/j.cageo.2024.105825
 
-Loomis, B. D., et al. (2020). Replacing GRACE/GRACE-FO With Satellite Laser Ranging. *Geophys. Res. Lett.*, 47(3). https://doi.org/10.1029/2019gl085488
+Loomis, B. D., et al. (2020). Replacing GRACE/GRACE-FO With Satellite Laser Ranging. *Geophys. Res. Lett.*, 47(
+3). https://doi.org/10.1029/2019gl085488
 
-Sun, Y., Riva, R., Ditmar, P. (2016). Optimizing estimates of annual variations and trends in geocenter motion and J2. *J. Geophys. Res. Solid Earth*, 121, 8352–8370. https://doi.org/10.1002/2016jb013073
+Sun, Y., Riva, R., Ditmar, P. (2016). Optimizing estimates of annual variations and trends in geocenter motion and J2.
+*J. Geophys. Res. Solid Earth*, 121, 8352–8370. https://doi.org/10.1002/2016jb013073
 
-Swenson, S., & Wahr, J. (2006). Post-processing removal of correlated errors in GRACE data. *Geophys. Res. Lett.* https://doi.org/10.1029/2005gl025285
+Swenson, S., & Wahr, J. (2006). Post-processing removal of correlated errors in GRACE data. *Geophys. Res.
+Lett.* https://doi.org/10.1029/2005gl025285
 
-Wahr, J., Molenaar, M., Bryan, F. (1998). Time variability of the Earth's gravity field. *J. Geophys. Res.*, 103, 30205–30229. https://doi.org/10.1029/98jb02844
+Wahr, J., Molenaar, M., Bryan, F. (1998). Time variability of the Earth's gravity field. *J. Geophys. Res.*, 103,
+30205–30229. https://doi.org/10.1029/98jb02844
 
-Yang, F., et al. (2022). On study of the earth topography correction for the GRACE surface mass estimation. *J. Geodesy*, 96. https://doi.org/10.1007/s00190-022-01683-0
+Yang, F., et al. (2022). On study of the earth topography correction for the GRACE surface mass estimation. *J.
+Geodesy*, 96. https://doi.org/10.1007/s00190-022-01683-0
 
-Yang, F., et al. (2024). A Monte Carlo Propagation of the Full Variance-Covariance of GRACE-Like Level-2 Data. *Water Resour. Res.*, 60(9), e2023WR036764. https://doi.org/10.1029/2023WR036764
+Yang, F., et al. (2024). A Monte Carlo Propagation of the Full Variance-Covariance of GRACE-Like Level-2 Data. *Water
+Resour. Res.*, 60(9), e2023WR036764. https://doi.org/10.1029/2023WR036764
 
-Zhang, Z.-Z., et al. (2009). An effective filtering for GRACE time-variable gravity: Fan filter. *Geophys. Res. Lett.*, 36(17). https://doi.org/10.1029/2009gl039459
+Zhang, Z.-Z., et al. (2009). An effective filtering for GRACE time-variable gravity: Fan filter. *Geophys. Res. Lett.*,
+36(17). https://doi.org/10.1029/2009gl039459

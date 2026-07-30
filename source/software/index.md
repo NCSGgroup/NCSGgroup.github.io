@@ -4,9 +4,9 @@ math: true
 ---
 ## Software
 
-<div class="ncsg-project-grid">
+<div class="ncsg-project-grid ncsg-project-grid--list">
 
-  <a class="ncsg-project-card" href="/software/pyhawk/">
+  <a class="ncsg-project-card" href="https://github.com/NCSGgroup/PyHawk">
     <div class="ncsg-project-card-header">
       <h3>PyHawk</h3>
       <img src="../img/projects/logo_pyhawk.webp" alt="Satellite gravity project">

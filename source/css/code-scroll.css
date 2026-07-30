@@ -1,8 +1,46 @@
+/* =========================================================
+ * Code block horizontal scroll + line number gutter
+ * Light/Dark mode compatible
+ * ========================================================= */
+
+/* ---------- Light mode default ---------- */
+:root {
+  --ncsg-code-bg: #ffffff;
+  --ncsg-code-gutter-bg: #f1f3f5;
+  --ncsg-code-gutter-text: #7a828c;
+  --ncsg-code-gutter-border: rgba(80, 95, 115, 0.18);
+}
+
+/* ---------- Dark mode: Fluid / common selectors ---------- */
+html[data-user-color-scheme="dark"],
+body[data-user-color-scheme="dark"],
+[data-user-color-scheme="dark"],
+html.dark,
+body.dark {
+  --ncsg-code-bg: #282c34;
+  --ncsg-code-gutter-bg: #242932;
+  --ncsg-code-gutter-text: #9aa4b2;
+  --ncsg-code-gutter-border: rgba(255, 255, 255, 0.12);
+}
+
+/* ---------- Fallback: system dark mode ---------- */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-user-color-scheme="light"]) {
+    --ncsg-code-bg: #282c34;
+    --ncsg-code-gutter-bg: #242932;
+    --ncsg-code-gutter-text: #9aa4b2;
+    --ncsg-code-gutter-border: rgba(255, 255, 255, 0.12);
+  }
+}
+
+/* ---------- Scroll container ---------- */
 figure.highlight {
   overflow-x: auto;
   overflow-y: hidden;
+  background: var(--ncsg-code-bg);
 }
 
+/* 避免内部 table 被压缩，保证横向滚动 */
 figure.highlight table {
   width: max-content;
   min-width: 100%;
@@ -10,6 +48,7 @@ figure.highlight table {
   border-spacing: 0;
 }
 
+/* ---------- Gutter / line numbers ---------- */
 figure.highlight td.gutter {
   position: sticky;
   left: 0;
@@ -23,18 +62,39 @@ figure.highlight td.gutter {
   text-align: right;
   user-select: none;
 
-  background: #282c34;
-  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--ncsg-code-gutter-text);
+  background: var(--ncsg-code-gutter-bg);
+  border-right: 1px solid var(--ncsg-code-gutter-border);
 }
 
+/* Fluid / Hexo 代码块中行号可能在 pre、span、line 里，全部继承 */
+figure.highlight td.gutter pre,
+figure.highlight td.gutter .line,
+figure.highlight td.gutter span {
+  color: var(--ncsg-code-gutter-text) !important;
+  background: transparent !important;
+}
+
+/* ---------- Code area ---------- */
 figure.highlight td.code {
   padding-left: 0.8em;
+  background: var(--ncsg-code-bg);
 }
 
+figure.highlight td.code pre {
+  background: transparent !important;
+}
+
+/* 内部 pre 不要自己滚动，否则会和行号重叠 */
 figure.highlight pre,
 figure.highlight td.gutter pre,
 figure.highlight td.code pre {
   margin: 0;
   white-space: pre;
   overflow: visible !important;
+}
+
+/* 可选：让代码块整体圆角更自然 */
+figure.highlight {
+  border-radius: 6px;
 }
