@@ -502,7 +502,7 @@ body.light {
   /* ---------- 双列卡片图片尺寸 ---------- */
   --ncsg-project-double-img-width: 30%;
   --ncsg-project-double-img-max-width: 150px;
-  --ncsg-project-double-img-height: 120px;
+  --ncsg-project-double-img-height: 160px;
 
   /* ---------- 单列卡片左侧图片区宽度 ---------- */
   --ncsg-project-list-media-width: 220px;

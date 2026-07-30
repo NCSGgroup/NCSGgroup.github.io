@@ -14,7 +14,7 @@ title: Developers
     <p><strong>Postdoctoral researcher</strong></p>
     <p>Research interests: satellite gravity, inverse problems, data assimilation, terrestrial water storage.</p>
     <p>
-      <a href="mailto:fany@plan.aau.dk"><i class="fa-solid fa-envelope"></i> | fany@plan.aau.dk</a>
+      <a href="mailto:fany@plan.aau.dk"><i class="fa-solid fa-envelope"></i> <u>fany@plan.aau.dk</u></a>
     </p>
   </div>
 </div>
@@ -27,10 +27,8 @@ title: Developers
     <p><strong>Postdoctoral researcher</strong></p>
     <p>Research interests: gravity data processing, data assimilation</p>
     <p>
-      <a href="mailto:liushuhao@apm.ac.cn"><i class="fa-solid fa-envelope"></i>  | liushuhao@apm.ac.cn</a>
-    </p>
-    <p>
-      <a href="https://shuhaoliu.com"><i class="fa-solid fa-user"></i> | shuhaoliu.com</a>
+      <a href="mailto:liushuhao@apm.ac.cn"><i class="fa-solid fa-envelope"></i> <u>liushuhao@apm.ac.cn</u></a> |
+      <a href="https://shuhaoliu.com"><i class="fa-solid fa-user"></i> <u>shuhaoliu.com</u></a>
     </p>
   </div>
 </div>
@@ -42,7 +40,7 @@ title: Developers
     <p><strong>PhD candidate</strong></p>
     <p>Research interests: satellite gravity, inverse problems.</p>
     <p>
-      <a href="mailto:wu_yi@hust.edu.cn"><i class="fa-solid fa-envelope"></i>  | wu_yi@hust.edu.cn</a>
+      <a href="mailto:wu_yi@hust.edu.cn"><i class="fa-solid fa-envelope"></i> <u>wu_yi@hust.edu.cn</u></a>
     </p>
   </div>
 </div>
@@ -54,7 +52,7 @@ title: Developers
     <p><strong>PhD candidate</strong></p>
     <p>Research interests: ocean topography; sea level change.</p>
     <p>
-      <a href="mailto:zhang.17371@osu.edu"><i class="fa-solid fa-envelope"></i>  | zhang.17371@osu.edu</a>
+      <a href="mailto:zhang.17371@osu.edu"><i class="fa-solid fa-envelope"></i> <u>zhang.17371@osu.edu</u></a>
     </p>
   </div>
 </div>
@@ -66,7 +64,7 @@ title: Developers
     <p><strong>PhD candidate</strong></p>
     <p>Research interests: satellite attitude determination，terrestrial water storage，hydrology，deep learning.</p>
     <p>
-      <a href="mailto:pxudong102@hust.edu.cn"><i class="fa-solid fa-envelope"></i>  | pxudong102@hust.edu.cn</a>
+      <a href="mailto:pxudong102@hust.edu.cn"><i class="fa-solid fa-envelope"></i> <u>pxudong102@hust.edu.cn</u></a>
     </p>
   </div>
 </div>
