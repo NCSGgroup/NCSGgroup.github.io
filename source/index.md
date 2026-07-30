@@ -1,5 +1,6 @@
 ---
 title: Welcome to NCSG group for numerical computation and satellite gravity! We here provide useful software for satellite gravity computation.
+math: true
 ---
 
 <link
@@ -23,3 +24,19 @@ The NCSG Group focuses on numerical computation, satellite gravity, geodesy, and
 ## Contact us
 
 Please leave your question, suggestion and comment on any of our published toolbox in [<u>our discussion forum</u>](https://github.com/orgs/NCSGgroup/discussions), so that we can answer or reach out to you as soon as possible.
+
+
+## test
+
+$E = mc^2$, $y = 2x$
+
+$$
+c^{2} = a^2 + b^2
+$$
+
+this is superscripts $a^b$ and subscripts $a_b$
+
+| a | b | c |
+|:--|:--|:--|
+| 1 | 2 | 3 |
+| 4 | 5 | 6 |
