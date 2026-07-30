@@ -1,7 +1,3 @@
 ---
-title: "This is a test text for PyHawk!"
+title: ""
 ---
-
---- text here ---
-
-go back to [home](/home/)
