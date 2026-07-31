@@ -22,12 +22,3 @@ The NCSG Group focuses on numerical computation, satellite gravity, geodesy, and
 ## Contact us
 
 Please leave your question, suggestion and comment on any of our published toolbox in [<u>our discussion forum</u>](https://github.com/orgs/NCSGgroup/discussions), so that we can answer or reach out to you as soon as possible.
-
-
-## test
-
-$$
-a^2+b_2 = \sqrt{c}
-$$
-
-text $a^2+b_2 = \sqrt{c + d}$
