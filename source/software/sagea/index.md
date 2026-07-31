@@ -41,7 +41,7 @@ When referencing this work, please cite:
     </div>
     <div class="ncsg-project-card-body">
       <p>
-        What can SaGEA do?.
+        What can SaGEA do?
       </p>
     </div>
   </a>
