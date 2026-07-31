@@ -1,0 +1,376 @@
+/* =========================================================
+ * ncsg-content-merged.css
+ *
+ * For Hexo Fluid:
+ * 1. Markdown table horizontal scroll
+ * 2. Markdown table light/dark mode adaptation
+ * 3. Code block horizontal scroll + line number gutter
+ * 4. Prevent table styles from polluting Hexo highlight code tables
+ * ========================================================= */
+
+
+/* =========================================================
+ * 0. Theme variables
+ * ========================================================= */
+
+:root {
+  /* ---------- Markdown table: light mode ---------- */
+  --ncsg-table-text: #2f3542;
+  --ncsg-table-bg: #ffffff;
+  --ncsg-table-head-bg: #f3f6fa;
+  --ncsg-table-stripe-bg: #fafbfc;
+  --ncsg-table-hover-bg: #f1f5f9;
+  --ncsg-table-border: rgba(80, 100, 120, 0.32);
+  --ncsg-table-scrollbar: rgba(100, 116, 139, 0.38);
+  --ncsg-table-scrollbar-hover: rgba(100, 116, 139, 0.6);
+
+  /* ---------- Code block: light mode ---------- */
+  --ncsg-code-bg: #ffffff;
+  --ncsg-code-gutter-bg: #f1f3f5;
+  --ncsg-code-gutter-text: #7a828c;
+  --ncsg-code-gutter-border: rgba(80, 95, 115, 0.18);
+}
+
+
+/* =========================================================
+ * 0.1 Dark mode variables
+ *
+ * Compatible with Fluid and common dark-mode selectors.
+ * ========================================================= */
+
+html[data-user-color-scheme="dark"],
+body[data-user-color-scheme="dark"],
+[data-user-color-scheme="dark"],
+html.dark,
+body.dark,
+html[data-theme="dark"],
+body[data-theme="dark"] {
+  /* ---------- Markdown table: dark mode ---------- */
+  --ncsg-table-text: #c9d1d9;
+  --ncsg-table-bg: #222832;
+  --ncsg-table-head-bg: #2d3542;
+  --ncsg-table-stripe-bg: #262e39;
+  --ncsg-table-hover-bg: #323c4a;
+  --ncsg-table-border: rgba(148, 163, 184, 0.35);
+  --ncsg-table-scrollbar: rgba(148, 163, 184, 0.42);
+  --ncsg-table-scrollbar-hover: rgba(148, 163, 184, 0.68);
+
+  /* ---------- Code block: dark mode ---------- */
+  --ncsg-code-bg: #282c34;
+  --ncsg-code-gutter-bg: #242932;
+  --ncsg-code-gutter-text: #9aa4b2;
+  --ncsg-code-gutter-border: rgba(255, 255, 255, 0.12);
+}
+
+
+/* ---------- Fallback: system dark mode ---------- */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-user-color-scheme="light"]) {
+    --ncsg-table-text: #c9d1d9;
+    --ncsg-table-bg: #222832;
+    --ncsg-table-head-bg: #2d3542;
+    --ncsg-table-stripe-bg: #262e39;
+    --ncsg-table-hover-bg: #323c4a;
+    --ncsg-table-border: rgba(148, 163, 184, 0.35);
+    --ncsg-table-scrollbar: rgba(148, 163, 184, 0.42);
+    --ncsg-table-scrollbar-hover: rgba(148, 163, 184, 0.68);
+
+    --ncsg-code-bg: #282c34;
+    --ncsg-code-gutter-bg: #242932;
+    --ncsg-code-gutter-text: #9aa4b2;
+    --ncsg-code-gutter-border: rgba(255, 255, 255, 0.12);
+  }
+}
+
+
+/* =========================================================
+ * 1. Markdown table horizontal scroll
+ *
+ * Important:
+ * Exclude Hexo highlight tables:
+ *   figure.highlight table
+ *
+ * The previous bug was caused by broad selectors like:
+ *   #board table
+ * They also matched code-block internal tables.
+ * ========================================================= */
+
+:where(.markdown-body, .post-content, .article-content, #board)
+  table:not(.highlight):not(figure.highlight table):not(.highlight table) {
+  display: block !important;
+
+  width: max-content !important;
+  max-width: 100% !important;
+
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+
+  margin: 1rem 0 !important;
+
+  border-collapse: collapse !important;
+  border-spacing: 0 !important;
+
+  color: var(--ncsg-table-text) !important;
+  background-color: var(--ncsg-table-bg) !important;
+
+  -webkit-overflow-scrolling: touch;
+}
+
+
+/* =========================================================
+ * 2. Markdown table cell style
+ * ========================================================= */
+
+:where(.markdown-body, .post-content, .article-content, #board)
+  table:not(.highlight):not(figure.highlight table):not(.highlight table)
+  :is(th, td) {
+  padding: 0.45rem 0.75rem !important;
+
+  border: 1px solid var(--ncsg-table-border) !important;
+
+  line-height: 1.6 !important;
+  vertical-align: middle !important;
+
+  white-space: nowrap !important;
+
+  color: var(--ncsg-table-text) !important;
+  background-color: var(--ncsg-table-bg) !important;
+}
+
+
+/* =========================================================
+ * 3. Markdown table header style
+ * ========================================================= */
+
+:where(.markdown-body, .post-content, .article-content, #board)
+  table:not(.highlight):not(figure.highlight table):not(.highlight table)
+  th {
+  font-weight: 700 !important;
+  text-align: center !important;
+
+  color: var(--ncsg-table-text) !important;
+  background-color: var(--ncsg-table-head-bg) !important;
+}
+
+
+/* =========================================================
+ * 4. Markdown table body style
+ * ========================================================= */
+
+:where(.markdown-body, .post-content, .article-content, #board)
+  table:not(.highlight):not(figure.highlight table):not(.highlight table)
+  td {
+  color: var(--ncsg-table-text) !important;
+  background-color: var(--ncsg-table-bg) !important;
+}
+
+
+/* =========================================================
+ * 5. Markdown table zebra stripe
+ * ========================================================= */
+
+:where(.markdown-body, .post-content, .article-content, #board)
+  table:not(.highlight):not(figure.highlight table):not(.highlight table)
+  tbody tr:nth-child(even) td {
+  background-color: var(--ncsg-table-stripe-bg) !important;
+}
+
+
+/* =========================================================
+ * 6. Markdown table hover effect
+ * ========================================================= */
+
+:where(.markdown-body, .post-content, .article-content, #board)
+  table:not(.highlight):not(figure.highlight table):not(.highlight table)
+  tbody tr:hover td {
+  background-color: var(--ncsg-table-hover-bg) !important;
+}
+
+
+/* =========================================================
+ * 7. Markdown table scrollbar style
+ * ========================================================= */
+
+:where(.markdown-body, .post-content, .article-content, #board)
+  table:not(.highlight):not(figure.highlight table):not(.highlight table)::-webkit-scrollbar {
+  height: 8px;
+}
+
+:where(.markdown-body, .post-content, .article-content, #board)
+  table:not(.highlight):not(figure.highlight table):not(.highlight table)::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+:where(.markdown-body, .post-content, .article-content, #board)
+  table:not(.highlight):not(figure.highlight table):not(.highlight table)::-webkit-scrollbar-thumb {
+  background-color: var(--ncsg-table-scrollbar);
+  border-radius: 999px;
+}
+
+:where(.markdown-body, .post-content, .article-content, #board)
+  table:not(.highlight):not(figure.highlight table):not(.highlight table)::-webkit-scrollbar-thumb:hover {
+  background-color: var(--ncsg-table-scrollbar-hover);
+}
+
+
+/* =========================================================
+ * 8. Code block horizontal scroll + line number gutter
+ *
+ * These rules are intentionally placed AFTER table rules.
+ * Even if some old/broad table styles are still loaded,
+ * this section can override most code-block pollution.
+ * ========================================================= */
+
+figure.highlight {
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+
+  background: var(--ncsg-code-bg) !important;
+  border-radius: 6px;
+
+  -webkit-overflow-scrolling: touch;
+}
+
+
+/* Reset internal highlight table.
+ * This fixes the bug where table styles made the code block
+ * outer area white in dark mode.
+ */
+figure.highlight table {
+  display: table !important;
+
+  width: max-content !important;
+  min-width: 100% !important;
+  max-width: none !important;
+
+  overflow: visible !important;
+
+  margin: 0 !important;
+
+  border-collapse: separate !important;
+  border-spacing: 0 !important;
+
+  color: inherit !important;
+  background: var(--ncsg-code-bg) !important;
+}
+
+
+/* Prevent Markdown table borders/backgrounds from leaking into code blocks */
+figure.highlight table,
+figure.highlight thead,
+figure.highlight tbody,
+figure.highlight tr,
+figure.highlight th,
+figure.highlight td {
+  border: 0 !important;
+  background-color: transparent !important;
+}
+
+
+/* Gutter / line numbers */
+figure.highlight td.gutter {
+  position: sticky;
+  left: 0;
+  z-index: 2;
+
+  width: 3.5em;
+  min-width: 3.5em;
+  max-width: 3.5em;
+
+  padding: 0 0.9em 0 0 !important;
+
+  text-align: right;
+  user-select: none;
+
+  color: var(--ncsg-code-gutter-text) !important;
+  background: var(--ncsg-code-gutter-bg) !important;
+  border-right: 1px solid var(--ncsg-code-gutter-border) !important;
+
+  vertical-align: top !important;
+}
+
+
+/* Fluid / Hexo line number elements */
+figure.highlight td.gutter pre,
+figure.highlight td.gutter .line,
+figure.highlight td.gutter span {
+  color: var(--ncsg-code-gutter-text) !important;
+  background: transparent !important;
+}
+
+
+/* Code area */
+figure.highlight td.code {
+  padding: 0 0 0 0.8em !important;
+
+  color: inherit !important;
+  background: var(--ncsg-code-bg) !important;
+
+  vertical-align: top !important;
+}
+
+
+/* Keep pre itself from creating another horizontal scrollbar */
+figure.highlight pre,
+figure.highlight td.gutter pre,
+figure.highlight td.code pre {
+  margin: 0 !important;
+
+  white-space: pre !important;
+  overflow: visible !important;
+
+  background: transparent !important;
+}
+
+
+/* In case the theme adds background to nested code/span elements */
+figure.highlight code,
+figure.highlight pre code,
+figure.highlight .code,
+figure.highlight .line {
+  background: transparent !important;
+}
+
+
+/* Code scrollbar */
+figure.highlight::-webkit-scrollbar {
+  height: 8px;
+}
+
+figure.highlight::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+figure.highlight::-webkit-scrollbar-thumb {
+  background-color: var(--ncsg-table-scrollbar);
+  border-radius: 999px;
+}
+
+figure.highlight::-webkit-scrollbar-thumb:hover {
+  background-color: var(--ncsg-table-scrollbar-hover);
+}
+
+
+/* =========================================================
+ * 9. Mobile optimization
+ * ========================================================= */
+
+@media (max-width: 768px) {
+  :where(.markdown-body, .post-content, .article-content, #board)
+    table:not(.highlight):not(figure.highlight table):not(.highlight table) {
+    max-width: 100% !important;
+  }
+
+  :where(.markdown-body, .post-content, .article-content, #board)
+    table:not(.highlight):not(figure.highlight table):not(.highlight table)
+    :is(th, td) {
+    padding: 0.4rem 0.65rem !important;
+    font-size: 0.92rem !important;
+  }
+
+  figure.highlight td.gutter {
+    width: 3em;
+    min-width: 3em;
+    max-width: 3em;
+  }
+}
