@@ -14,7 +14,7 @@ The level-2 time-variable gravity fields obtained from Gravity Recovery and Clim
 However, the post-processing of those gravity fields to obtain a desired signal is rather challenging for users that are not familiar with the level-2 products.
 In addition, the error assessment/quantification of those derived signals, which is of increasing demand in science application, is still a challenging issue even among the professional GRACE(-FO) users.
 In this effort, the common post-processing steps and the assessment of complicated error (uncertainty) of GRACE(-FO), are integrated into an open-source, cross-platform and Python-based toolbox called SAGEA (SAtellite Gravity Error Assessment). 
-With diverse options, SAGEA provides flexibility to generate signal along with the full error from level-2 products, so that any non-expert user can easily obtain advanced experience of GRACE(-FO) processing. Please contact Shuhao Liu <a href="mailto:liushuhao@apm.ac.cn">(<u>shuhaoliu@apm.ac.cn</u>)</a>
+With diverse options, SAGEA provides flexibility to generate signal along with the full error from level-2 products, so that any non-expert user can easily obtain advanced experience of GRACE(-FO) processing. Please contact Shuhao Liu <a href="mailto:liushuhao@apm.ac.cn">(<u>liushuhao@apm.ac.cn</u>)</a>
 and Fan Yang <a href="mailto:fany@plan.aau.dk">(<u>fany@plan.aau.dk</u>)</a> for more information.
 </p>
 
