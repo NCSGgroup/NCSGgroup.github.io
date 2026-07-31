@@ -89,7 +89,7 @@ When referencing this work, please cite:
     </div>
     <div class="ncsg-project-card-body">
       <p>
-        Join us as a sagea contributor!
+        Join us as a contributor!
       </p>
     </div>
   </a>
