@@ -28,20 +28,6 @@ When referencing this work, please cite:
 
 <div class="ncsg-project-grid">
 
-  <a class="ncsg-project-card" href="/software/sagea/get_started/">
-    <div class="ncsg-project-card-header">
-      <h3>Get started</h3>
-    <svg class="icon ncsg-adaptive-icon" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="200" height="200" aria-hidden="true">
-      <path d="M512 956.032h-1.088a27.008 27.008 0 0 1-24.704-17.024L369.92 654.08 84.992 537.792a27.904 27.904 0 0 1-1.92-50.56l833.024-416.448a27.84 27.84 0 0 1 37.312 37.312l-416.64 832.832a27.52 27.52 0 0 1-24.768 15.104zM162.688 509.568l239.04 97.664c6.848 2.752 12.352 8.32 15.168 15.168l97.6 238.976 351.872-703.744-703.68 352z" fill="#ffffff"></path>
-    </svg>
-    </div>
-    <div class="ncsg-project-card-body">
-      <p>
-      Examples for quick use of sagea.
-      </p>
-    </div>
-  </a>
-
   <a class="ncsg-project-card" href="/software/sagea/user_guide">
     <div class="ncsg-project-card-header">
       <h3>User guide</h3>
@@ -55,7 +41,21 @@ When referencing this work, please cite:
     </div>
     <div class="ncsg-project-card-body">
       <p>
-        Documentary for sagea.
+        What can SaGEA do?.
+      </p>
+    </div>
+  </a>
+
+  <a class="ncsg-project-card" href="/software/sagea/get_started/">
+    <div class="ncsg-project-card-header">
+      <h3>Get started</h3>
+    <svg class="icon ncsg-adaptive-icon" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="200" height="200" aria-hidden="true">
+      <path d="M512 956.032h-1.088a27.008 27.008 0 0 1-24.704-17.024L369.92 654.08 84.992 537.792a27.904 27.904 0 0 1-1.92-50.56l833.024-416.448a27.84 27.84 0 0 1 37.312 37.312l-416.64 832.832a27.52 27.52 0 0 1-24.768 15.104zM162.688 509.568l239.04 97.664c6.848 2.752 12.352 8.32 15.168 15.168l97.6 238.976 351.872-703.744-703.68 352z" fill="#ffffff"></path>
+    </svg>
+    </div>
+    <div class="ncsg-project-card-body">
+      <p>
+      Examples for quick use of sagea.
       </p>
     </div>
   </a>

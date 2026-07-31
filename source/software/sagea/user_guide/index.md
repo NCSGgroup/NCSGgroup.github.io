@@ -1,5 +1,5 @@
 ---
-title: "Documentary for SaGEA"
+title: "User guide: SaGEA is for the post-processing and error assessment for satellite gravity products"
 ---
 
 **Back to** [<u>/software/sagea/</u>](/software/sagea/)
