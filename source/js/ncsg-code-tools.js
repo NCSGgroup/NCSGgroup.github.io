@@ -36,6 +36,114 @@
     button.setAttribute("title", label);
   }
 
+  function getLanguageName(figure) {
+  if (!figure) {
+    return "";
+  }
+
+  /*
+   * Hexo highlight 常见形式：
+   * <figure class="highlight python">
+   */
+  const ignoredClasses = new Set([
+    "highlight",
+    "ncsg-code-enhanced",
+    "ncsg-code-expanded"
+  ]);
+
+  let lang = "";
+
+  figure.classList.forEach(function (cls) {
+    if (!ignoredClasses.has(cls) && !cls.startsWith("ncsg-")) {
+      lang = cls;
+    }
+  });
+
+  /*
+   * fallback:
+   * 某些渲染器可能生成：
+   * <code class="language-python">
+   * <code class="lang-python">
+   */
+  if (!lang) {
+    const code = figure.querySelector("code[class*='language-'], code[class*='lang-']");
+    if (code) {
+      code.classList.forEach(function (cls) {
+        if (cls.startsWith("language-")) {
+          lang = cls.replace(/^language-/, "");
+        } else if (cls.startsWith("lang-")) {
+          lang = cls.replace(/^lang-/, "");
+        }
+      });
+    }
+  }
+
+  if (!lang) {
+    return "";
+  }
+
+  lang = lang.toLowerCase();
+
+  /*
+   * 显示名映射。
+   * 你可以继续按需添加。
+   */
+  const languageMap = {
+    py: "Python",
+    python: "Python",
+    js: "JavaScript",
+    javascript: "JavaScript",
+    ts: "TypeScript",
+    typescript: "TypeScript",
+    html: "HTML",
+    xml: "XML",
+    css: "CSS",
+    scss: "SCSS",
+    sass: "Sass",
+    json: "JSON",
+    yaml: "YAML",
+    yml: "YAML",
+    bash: "Bash",
+    sh: "Shell",
+    shell: "Shell",
+    zsh: "Zsh",
+    powershell: "PowerShell",
+    ps1: "PowerShell",
+    c: "C",
+    cpp: "C++",
+    "c++": "C++",
+    cxx: "C++",
+    hpp: "C++",
+    java: "Java",
+    kotlin: "Kotlin",
+    go: "Go",
+    rust: "Rust",
+    rs: "Rust",
+    ruby: "Ruby",
+    php: "PHP",
+    sql: "SQL",
+    r: "R",
+    matlab: "MATLAB",
+    tex: "TeX",
+    latex: "LaTeX",
+    markdown: "Markdown",
+    md: "Markdown",
+    dockerfile: "Dockerfile",
+    makefile: "Makefile",
+    toml: "TOML",
+    ini: "INI"
+  };
+
+  if (languageMap[lang]) {
+    return languageMap[lang];
+  }
+
+  /*
+   * 默认首字母大写。
+   */
+  return lang.charAt(0).toUpperCase() + lang.slice(1);
+}
+
   function getCodeText(figure) {
     const codePre =
       figure.querySelector("td.code pre") ||
@@ -141,22 +249,38 @@
 
     figure.classList.add("ncsg-code-enhanced");
 
-    const toolbar = document.createElement("div");
-    toolbar.className = "ncsg-code-toolbar";
+const toolbar = document.createElement("div");
+toolbar.className = "ncsg-code-toolbar";
 
-    const toggleBtn = document.createElement("button");
-    toggleBtn.type = "button";
-    toggleBtn.className = "ncsg-code-btn ncsg-code-toggle";
-    setButtonIcon(toggleBtn, "expand", "expand");
-    toggleBtn.setAttribute("aria-expanded", "false");
+/*
+ * 左侧语言标签
+ */
+const langLabel = document.createElement("div");
+langLabel.className = "ncsg-code-lang";
+langLabel.textContent = getLanguageName(figure);
 
-    const copyBtn = document.createElement("button");
-    copyBtn.type = "button";
-    copyBtn.className = "ncsg-code-btn ncsg-code-copy";
-    setButtonIcon(copyBtn, "copy", "copy");
+/*
+ * 右侧按钮区
+ */
+const actions = document.createElement("div");
+actions.className = "ncsg-code-actions";
 
-    toolbar.appendChild(toggleBtn);
-    toolbar.appendChild(copyBtn);
+const toggleBtn = document.createElement("button");
+toggleBtn.type = "button";
+toggleBtn.className = "ncsg-code-btn ncsg-code-toggle";
+setButtonIcon(toggleBtn, "expand", "展开代码");
+toggleBtn.setAttribute("aria-expanded", "false");
+
+const copyBtn = document.createElement("button");
+copyBtn.type = "button";
+copyBtn.className = "ncsg-code-btn ncsg-code-copy";
+setButtonIcon(copyBtn, "copy", "复制代码");
+
+actions.appendChild(toggleBtn);
+actions.appendChild(copyBtn);
+
+toolbar.appendChild(langLabel);
+toolbar.appendChild(actions);
 
     let scrollBox = table.parentElement;
 

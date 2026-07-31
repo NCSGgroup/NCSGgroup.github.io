@@ -7,5 +7,4 @@
 **Latest version:** 0.2.9
 
 **Useful Link:**
-[<i class="fab fa-github"></i> <u>Source repository</u>](https://github.com/NCSGgroup/SaGEA) |
-[<i class="fas fa-comment"></i> <u>Discuss with us</u>](https://github.com/orgs/NCSGgroup/discussions)
+[<i class="fab fa-github"></i> <u>Source repository</u>](https://github.com/NCSGgroup/SaGEA) | [<i class="fas fa-comment"></i> <u>Discuss with us</u>](https://github.com/orgs/NCSGgroup/discussions)
