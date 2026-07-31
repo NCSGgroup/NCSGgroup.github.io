@@ -55,7 +55,7 @@ When referencing this work, please cite:
     </div>
     <div class="ncsg-project-card-body">
       <p>
-      Examples for quick use of sagea.
+      Example demos for quick use of sagea.
       </p>
     </div>
   </a>
@@ -73,7 +73,7 @@ When referencing this work, please cite:
     </div>
     <div class="ncsg-project-card-body">
       <p>
-        Product examples produced via sagea.
+        Example products produced via sagea.
       </p>
     </div>
   </a>
