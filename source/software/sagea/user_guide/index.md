@@ -1,5 +1,5 @@
 ---
-title: "User guide: SaGEA is for the post-processing and error assessment for satellite gravity products"
+title: "Documentary for SaGEA: A Python toolbox for post-processing and error assessment of satellite gravity products"
 ---
 
 **Back to** [<u>/software/sagea/</u>](/software/sagea/)

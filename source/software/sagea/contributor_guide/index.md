@@ -1,5 +1,5 @@
 ---
-title: "Join us as a sagea contributor!"
+title: "Join us as a SaGEA contributor!"
 ---
 **Back to** [<u>/software/sagea/</u>](/software/sagea/)
 

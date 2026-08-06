@@ -22,3 +22,11 @@ The NCSG Group focuses on numerical computation, satellite gravity, geodesy, and
 ## Contact us
 
 Please leave your question, suggestion and comment on any of our published toolbox in [<u>our discussion forum</u>](https://github.com/orgs/NCSGgroup/discussions), so that we can answer or reach out to you as soon as possible.
+
+## test: jupyter
+
+<p>
+  <a href="/jupyterlite/lab/index.html?path=demo1.ipynb" target="_blank">
+    在新窗口中运行这个 Notebook
+  </a>
+</p>

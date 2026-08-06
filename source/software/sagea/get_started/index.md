@@ -1,5 +1,5 @@
 ---
-title: "Documentary for SaGEA"
+title: "Quick start for SaGEA: A Python toolbox for post-processing and error assessment of satellite gravity products"
 ---
 
 **Back to** [<u>/software/sagea/</u>](/software/sagea/)
@@ -10,16 +10,40 @@ title: "Documentary for SaGEA"
 
 ---
 
+# Spectral- and spatial-domain conversion
+
+===== text under construction =====
+
+<p style="text-align: justify; text-justify: inter-word;">
+
+1. Global satellite gravity field models are typically represented by fully normalized Stokes coefficients $\bar C_{lm}$ and $\bar S_{lm}$, i.e., spherical harmonic coefficients (SHCs) of the Earth's gravitational potential. SHCs of different degree $l$ and order $m$ represent signal of different spatial-wave length, and the larger $l$ is, the shorter the spatial-wave length. <u>PICTURE here</u>
+2. Generally SHCs need converting to be spatial representation, called spherical harmonic synthesis, and the inverse processing is called spherical harmonic analysis.
+3. `sagea` provide functions to processing the spherical harmonic synthesis and analysis, and thanks to the vectorization, the computation efficient and accuracy are both very practical. <u>INTRODUCE data class SHC and GRD here</u>
+
+Here give some usages for spherical harmonic synthesis. Run the example notebook in a <a href="/jupyterlite/lab/index.html?path=function_01_spectral_spatial_transform.ipynb" target="_blank"> <u>new tab</u></a>.
+</p>
+
+# Corrections for gravity products
+
+text under construction ...
+
+# Error assessment for gravity products
+
+text under construction ...
+
+
+---
+===== OLD TEXT BELOW=====
+
 # 1) Installation
 
-Here give some examples for using `sagea` PyPI.
-Before the use of `sagea`, please be sure you have already installed `sagea` with
+<p style="text-align: justify; text-justify: inter-word;">
+`sagea==0.3.1a7` and later versions support installation in different environments, including standard Python environments and lightweight installation in JupyterLite environments. In web-based environments such as JupyterLite, some features are currently unavailable due to limited support for certain dependencies. This setup is intended for demonstration purposes only. For full functionality, please install and use sagea in a standard Python environment.
 
-```bash
-pip install sagea==0.2.9
-```
-
-This will allow downloading `sagea` and associated dependent packages.
+  <a href="/jupyterlite/lab/index.html?path=01_inbuild_document.ipynb" target="_blank">
+    <u>Run the example notebook in a new tab.</u>
+  </a>
+</p>
 
 # 2) Examples
 
