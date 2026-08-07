@@ -22,7 +22,13 @@ title: "Quick start for SaGEA: A Python toolbox for post-processing and error as
 <p style="text-align: justify; text-justify: inter-word;">
 1. Global satellite gravity field models are typically represented by fully normalized Stokes coefficients \( \bar C_{lm} \) and \( \bar S_{lm} \), i.e., spherical harmonic coefficients (SHCs) of the Earth's gravitational potential.
 SHCs of different degree \( l \) and order \( m \) represent signal of different spatial-wave length, and the larger \( l \) is, the shorter the spatial-wave length, while \( m \) corresponds the spatial direction.<u>PICTURE here</u><br>
+</p>
+
+<p style="text-align: justify; text-justify: inter-word;">
 2. Generally SHCs need converting to be spatial representation, called spherical harmonic synthesis, and the inverse processing is called spherical harmonic analysis.<br>
+</p>
+
+<p style="text-align: justify; text-justify: inter-word;">
 3. SaGEA provide functions to processing the spherical harmonic synthesis and analysis, and thanks to the vectorization, the computation efficient and accuracy are both very practical. <u>INTRODUCE data class SHC and GRD here</u><br>
 </p>
 
@@ -36,7 +42,10 @@ SHCs of different degree \( l \) and order \( m \) represent signal of different
 
 <p style="text-align: justify; text-justify: inter-word;">
 1. Satellite gravity products such as GRACE/GRACE-FO usually need additional correction, such as filtering, low-degrees replacement, etc.<br>
-2. SaGEA contains commonly-used corrections<br>
+</p>
+
+<p style="text-align: justify; text-justify: inter-word;">
+2. SaGEA contains commonly-used corrections.<br>
 </p>
 
 <p style="text-align: justify; text-justify: inter-word;">
