@@ -15,17 +15,19 @@ title: "Quick start for SaGEA: A Python toolbox for post-processing and error as
 ===== text under construction =====
 
 <p style="text-align: justify; text-justify: inter-word;">
-
-1. Global satellite gravity field models are typically represented by fully normalized Stokes coefficients $\bar C_{lm}$ and $\bar S_{lm}$, i.e., spherical harmonic coefficients (SHCs) of the Earth's gravitational potential. SHCs of different degree $l$ and order $m$ represent signal of different spatial-wave length, and the larger $l$ is, the shorter the spatial-wave length. <u>PICTURE here</u>
-2. Generally SHCs need converting to be spatial representation, called spherical harmonic synthesis, and the inverse processing is called spherical harmonic analysis.
-3. `sagea` provide functions to processing the spherical harmonic synthesis and analysis, and thanks to the vectorization, the computation efficient and accuracy are both very practical. <u>INTRODUCE data class SHC and GRD here</u>
-
-Here give some usages for spherical harmonic synthesis. Run the example notebook in a <a href="/jupyterlite/lab/index.html?path=function_01_spectral_spatial_transform.ipynb" target="_blank"> <u>new tab</u></a>.
+1. Global satellite gravity field models are typically represented by fully normalized Stokes coefficients $\bar C_{lm}$ and $\bar S_{lm}$, i.e., spherical harmonic coefficients (SHCs) of the Earth's gravitational potential. SHCs of different degree $l$ and order $m$ represent signal of different spatial-wave length, and the larger $l$ is, the shorter the spatial-wave length. <u>PICTURE here</u><br>
+2. Generally SHCs need converting to be spatial representation, called spherical harmonic synthesis, and the inverse processing is called spherical harmonic analysis.<br>
+3. `sagea` provide functions to processing the spherical harmonic synthesis and analysis, and thanks to the vectorization, the computation efficient and accuracy are both very practical. <u>INTRODUCE data class SHC and GRD here</u><br>
+<i class="fab fa-python"></i> Run the example notebook in <a href="/jupyterlite/lab/index.html?path=function_01_spectral_spatial_transform.ipynb" target="_blank"> <u>a new tab</u></a> to see visually how the SHCs correspond the spatial distribution.<br>
 </p>
 
 # Corrections for gravity products
 
-text under construction ...
+<p style="text-align: justify; text-justify: inter-word;">
+1. Satellite gravity products such as GRACE/GRACE-FO usually need additional correction, such as filtering, low-degrees replacement, etc.<br>
+2. SaGEA contains commonly-used corrections<br>
+<i class="fab fa-python"></i> Run the example notebook in <a href="/jupyterlite/lab/index.html?path=function_02_spectral_spatial_transform_for_products.ipynb" target="_blank"> <u>a new tab</u></a> to apply a postprocessing on given GRACE level-2 products.<br>
+</p>
 
 # Error assessment for gravity products
 
