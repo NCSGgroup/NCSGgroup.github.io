@@ -14,6 +14,7 @@ title: "Quick start for SaGEA: A Python toolbox for post-processing and error as
         src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.1.2/es5/tex-mml-chtml.js">
     </script>
 </head>
+
 # Spectral- and spatial-domain conversion
 
 ===== text under construction =====
