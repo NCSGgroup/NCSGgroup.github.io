@@ -51,7 +51,7 @@ SHCs of different degree \( l \) and order \( m \) represent signal of different
 </p>
 
 <p style="text-align: justify; text-justify: inter-word;">
-<i class="fab fa-python"></i> Wanna have a try? Run the example notebook in <a href="/jupyterlite/lab/index.html?path=sagea/function_02_spectral_spatial_transform_for_products.ipynb" target="_blank"> <u>a new tab</u></a> to apply a postprocessing on given GRACE level-2 products.<br>
+<i class="fab fa-python"></i> Wanna have a try? Run the example notebook in <a href="/jupyterlite/lab/index.html?path=sagea/function_02_postprocessing.ipynb" target="_blank"> <u>a new tab</u></a> to apply a postprocessing on given GRACE level-2 products.<br>
 </p>
 
 ---
