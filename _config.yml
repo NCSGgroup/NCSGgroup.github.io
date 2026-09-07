@@ -39,6 +39,8 @@ i18n_dir: :lang
 skip_render:
   - "jupyterlite/**"
   - "jupyterlite/**/*"
+  - "software/sagea/teaching_demo_spectral_spatial/app/**"
+  - "software/sagea/teaching_demo_spectral_spatial/app/**/*"
 
 # Writing
 new_post_name: :title.md # File name of new posts
@@ -125,4 +127,3 @@ markdown:
     typographer: true
   plugins:
     - markdown-it-mathjax3
-
